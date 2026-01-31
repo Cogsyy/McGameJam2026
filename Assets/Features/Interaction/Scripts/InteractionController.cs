@@ -64,7 +64,7 @@ public class InteractionController : MonoBehaviour
 			}
 		}
 	}
-
+	
 	private void PerformInteractionCheck()
 	{
 		if (_camera == null || _currentInteractable != null)
