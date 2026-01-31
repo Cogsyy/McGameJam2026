@@ -50,7 +50,7 @@ public class InteractionController : MonoBehaviour
 					
 					if (_interactionPromptUI != null)
 					{
-                        _interactionPromptUI.text = "Press " + _interactionKey.ToString() + " to interact";
+						_interactionPromptUI.text = "Press " + _interactionKey.ToString() + " to interact";
 						_interactionPromptUI.gameObject.SetActive(true);
 					}
 				}

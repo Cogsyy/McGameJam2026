@@ -28,8 +28,6 @@ public class FirstPersonCamera : MonoBehaviour
 		_verticalRotation = Mathf.Clamp(_verticalRotation, _minVerticalAngle, _maxVerticalAngle);
 
 		// Applying pitch to the camera object
-		// Note: This script assumes it's attached directly to the Camera. 
-		// If attached to a parent body, you'd usually rotate a child camera object for pitch.
 		transform.localRotation = Quaternion.Euler(_verticalRotation, transform.localEulerAngles.y, 0f);
 	
 		if (Input.GetKeyDown(KeyCode.Escape))
@@ -44,6 +42,19 @@ public class FirstPersonCamera : MonoBehaviour
 				Cursor.lockState = CursorLockMode.None;
 				Cursor.visible = true;
 			}
+		}
+	}
+
+	public void SetPosition(Vector3 position, Quaternion rotation)
+	{
+		transform.position = position;
+		transform.rotation = rotation;
+		
+		// Reset internal vertical rotation to match the new orientation
+		_verticalRotation = rotation.eulerAngles.x;
+		if (_verticalRotation > 180f)
+		{
+			_verticalRotation -= 360f;
 		}
 	}
 }

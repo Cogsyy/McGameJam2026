@@ -36,6 +36,37 @@ Transform:
   - {fileID: 8608879357095297253}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1158821675642986436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7336710329725338946}
+  m_Layer: 3
+  m_Name: ViewPointPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7336710329725338946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158821675642986436}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.035}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 11651641671833046}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1835751286035672821
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +191,7 @@ GameObject:
   - component: {fileID: 330202976950359928}
   - component: {fileID: 7182606725116923780}
   - component: {fileID: 5132604837102759855}
-  - component: {fileID: 6423188865446671794}
+  - component: {fileID: 7274435019336052330}
   m_Layer: 3
   m_Name: DeskPlaceholder
   m_TagString: Untagged
@@ -180,7 +211,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -1.65, z: 0}
   m_LocalScale: {x: 5, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7336710329725338946}
   m_Father: {fileID: 7169764141200944397}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &330202976950359928
@@ -261,7 +293,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6423188865446671794
+--- !u!114 &7274435019336052330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -270,12 +302,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4800725410737945829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6fca13011cb961458216b378a1a58be, type: 3}
+  m_Script: {fileID: 11500000, guid: 43260a661dab71c4dbf99c816a73035d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SimpleInteractable
+  m_EditorClassIdentifier: Assembly-CSharp::FocusInteractable
   _message: Interacted!
   _highlightMaterial: {fileID: 2100000, guid: 0e7f9d91f7d5ad34ba933ce5e7f8a26b, type: 2}
   _renderer: {fileID: 7182606725116923780}
+  _viewPoint: {fileID: 7336710329725338946}
+  _heightOffset: 1.6
 --- !u!1 &5259825613850767968
 GameObject:
   m_ObjectHideFlags: 0
