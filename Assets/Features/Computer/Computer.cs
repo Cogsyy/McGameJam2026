@@ -29,4 +29,9 @@ public class Computer : FocusInteractable
 			_computerCanvas.enabled = false;
 		}
 	}
+
+	public void OnClickGambling()
+	{
+		Debug.Log("Gambling!");
+	}
 }
