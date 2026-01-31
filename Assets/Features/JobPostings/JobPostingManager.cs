@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class JobPostingManager : MonoBehaviour
@@ -11,17 +12,33 @@ public class JobPostingManager : MonoBehaviour
 
     public void InitializeJobPostings(int nbPostings)
     {
-        for(int i = 0; i < jobPostingObjects.Count; i++)
-        {
-            jobPostingObjects[i].gameObject.SetActive(false);
-		}
+
 
 		int nbPostingsToInitialize = Mathf.Min(nbPostings, jobPostingObjects.Count);
 
-        for (int i = 0; i < nbPostingsToInitialize; i++)
+        // Get Unique random indexes
+        HashSet<int> randomIndexes = new HashSet<int>();
+        for(int i = 0; i < 100; ++i) // Avoid infinite loops
+        {
+            if(randomIndexes.Count >= nbPostingsToInitialize)
+            {
+                break;
+            }
+            int randomIndex = Random.Range(0, jobPostingData.Count);
+            randomIndexes.Add(randomIndex);
+        }
+
+		// Deactivate all job postings first
+		for(int i = 0; i < jobPostingObjects.Count; i++)
+		{
+			jobPostingObjects[i].gameObject.SetActive(false);
+		}
+
+        int[] dataIndices = randomIndexes.ToArray();
+		for (int i = 0; i < dataIndices.Length; i++)
         {
             JobPosting postingObject = jobPostingObjects[i];
-			JobPostingData data = jobPostingData[Random.Range(0, jobPostingData.Count)];
+			JobPostingData data = jobPostingData[dataIndices[i]];
 			postingObject.SetJobPostingData(data);
 			postingObject.gameObject.SetActive(true);
 		}
