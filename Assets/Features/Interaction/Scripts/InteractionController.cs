@@ -24,9 +24,20 @@ public class InteractionController : MonoBehaviour
 			if (_currentLookingInteractable != null)
 			{
                 _currentInteractable = _currentLookingInteractable;
+                _currentInteractable.OnHoverExit();
 				_currentInteractable.Interact();
 			}
 		}
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (_currentInteractable != null)
+            {
+                _currentInteractable.OnExitInteractable();
+                _interactionPromptUI.gameObject.SetActive(false);
+                _currentInteractable = null;
+            }
+        }
 	}
 
 	private void PerformInteractionCheck()

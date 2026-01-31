@@ -36,14 +36,6 @@ public class SimpleInteractable : MonoBehaviour, IInteractable
 		}
 	}
 
-    protected virtual void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            OnExitInteractable();
-        }
-    }
-
     public virtual bool CanInteract()
     {
         return true;
@@ -72,9 +64,9 @@ public class SimpleInteractable : MonoBehaviour, IInteractable
 		}
 	}
 
-    protected virtual void OnExitInteractable()
+    public virtual void OnExitInteractable()
     {
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 }
