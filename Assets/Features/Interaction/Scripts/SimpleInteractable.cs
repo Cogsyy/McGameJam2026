@@ -5,20 +5,20 @@ public class SimpleInteractable : MonoBehaviour, IInteractable
 	[Header("Settings")]
 	[SerializeField] private string _message = "Interacted!";
 	[SerializeField] private Material _highlightMaterial;
-    [SerializeField] private bool _cursorVisibleOnInteract = false;
+	[SerializeField] protected bool cursorVisibleOnInteract = false;
 
 	[Header("References")]
 	[SerializeField] private Renderer _renderer;
 
 	private Material _originalMaterial;
 
-    
 	protected virtual void Reset()
 	{
 		if (_renderer == null)
 		{
 			_renderer = GetComponent<Renderer>();
-            //Look for default highlight material in the project
+			
+			// Look for default highlight material in the project
 			_highlightMaterial = Resources.Load<Material>("Highlighted");
 		}
 	}
@@ -36,16 +36,25 @@ public class SimpleInteractable : MonoBehaviour, IInteractable
 		}
 	}
 
-    public virtual bool CanInteract()
-    {
-        return true;
-    }
+	public virtual bool CanInteract()
+	{
+		return true;
+	}
 
 	public virtual void Interact()
 	{
 		Debug.Log($"{gameObject.name}: {_message}");
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = _cursorVisibleOnInteract;
+		
+		if (cursorVisibleOnInteract)
+		{
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
+		}
+		else
+		{
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
+		}
 	}
 
 	public virtual void OnHoverEnter()
@@ -64,9 +73,9 @@ public class SimpleInteractable : MonoBehaviour, IInteractable
 		}
 	}
 
-    public virtual void OnExitInteractable()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
+	public virtual void OnExitInteractable()
+	{
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+	}
 }

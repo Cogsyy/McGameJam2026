@@ -8,6 +8,7 @@ public class FirstPersonCamera : MonoBehaviour
 	[SerializeField] private float _maxVerticalAngle = 90f;
 
 	private float _verticalRotation = 0f;
+	private bool _isMouseLookEnabled = true;
 
 	private void Start()
 	{
@@ -17,31 +18,20 @@ public class FirstPersonCamera : MonoBehaviour
 
 	private void Update()
 	{
-		float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Time.deltaTime;
-		float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Time.deltaTime;
-
-		// Horizontal rotation (Yaw)
-		transform.Rotate(Vector3.up * mouseX);
-
-		// Vertical rotation (Pitch)
-		_verticalRotation -= mouseY;
-		_verticalRotation = Mathf.Clamp(_verticalRotation, _minVerticalAngle, _maxVerticalAngle);
-
-		// Applying pitch to the camera object
-		transform.localRotation = Quaternion.Euler(_verticalRotation, transform.localEulerAngles.y, 0f);
-	
-		if (Input.GetKeyDown(KeyCode.Escape))
+		if (_isMouseLookEnabled)
 		{
-			if (Cursor.lockState == CursorLockMode.None)
-			{
-				Cursor.lockState = CursorLockMode.Locked;
-				Cursor.visible = false;
-			}
-			else
-			{
-				Cursor.lockState = CursorLockMode.None;
-				Cursor.visible = true;
-			}
+			float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Time.deltaTime;
+			float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Time.deltaTime;
+
+			// Horizontal rotation (Yaw)
+			transform.Rotate(Vector3.up * mouseX);
+
+			// Vertical rotation (Pitch)
+			_verticalRotation -= mouseY;
+			_verticalRotation = Mathf.Clamp(_verticalRotation, _minVerticalAngle, _maxVerticalAngle);
+
+			// Applying pitch to the camera object
+			transform.localRotation = Quaternion.Euler(_verticalRotation, transform.localEulerAngles.y, 0f);
 		}
 	}
 
@@ -55,6 +45,21 @@ public class FirstPersonCamera : MonoBehaviour
 		if (_verticalRotation > 180f)
 		{
 			_verticalRotation -= 360f;
+		}
+	}
+
+	public void SetMouseLookEnabled(bool enabled)
+	{
+		_isMouseLookEnabled = enabled;
+		if (enabled)
+		{
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
+		}
+		else
+		{
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
 		}
 	}
 }
