@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2460271549364719936}
   - component: {fileID: 9017787890229900654}
   - component: {fileID: 6288423255465837659}
+  - component: {fileID: 4992135821812575709}
   m_Layer: 5
   m_Name: Job Canvas
   m_TagString: Untagged
@@ -105,6 +106,28 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4992135821812575709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3771752626969011216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afa09f14c70db44a95f5a2ddd8aabf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JobPostingManager
+  jobPostingObjects:
+  - {fileID: 6263471982315839822}
+  - {fileID: 513954054826460045}
+  - {fileID: 2366345053268776021}
+  jobPostingData:
+  - {fileID: 11400000, guid: 991e98c64cf0c6b4bb675ab23f221f76, type: 2}
+  - {fileID: 11400000, guid: 396fb932c74e36743b90eeae3b454a94, type: 2}
+  - {fileID: 11400000, guid: b91d4ad365f9b4b4e83deb8c25aaa327, type: 2}
+  - {fileID: 11400000, guid: c27f70d1c0b036545ba342ca0c2617a6, type: 2}
+  - {fileID: 11400000, guid: de3da65d5a58ac349874551c45ceaa46, type: 2}
 --- !u!1 &8241298768848892208
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +300,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 842ff83612acc6941ba12d81888b0cb7, type: 3}
+--- !u!114 &513954054826460045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1870504670344266126, guid: 842ff83612acc6941ba12d81888b0cb7, type: 3}
+  m_PrefabInstance: {fileID: 2221594490854556163}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc41500b7290dbe448de470557798b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JobPosting
 --- !u!224 &4101954767946493742 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2754411093919165741, guid: 842ff83612acc6941ba12d81888b0cb7, type: 3}
@@ -384,6 +418,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2754411093919165741, guid: 842ff83612acc6941ba12d81888b0cb7, type: 3}
   m_PrefabInstance: {fileID: 4117324010625357275}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2366345053268776021 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1870504670344266126, guid: 842ff83612acc6941ba12d81888b0cb7, type: 3}
+  m_PrefabInstance: {fileID: 4117324010625357275}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc41500b7290dbe448de470557798b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JobPosting
 --- !u!1001 &5699600562276294848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -481,6 +526,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 842ff83612acc6941ba12d81888b0cb7, type: 3}
+--- !u!114 &6263471982315839822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1870504670344266126, guid: 842ff83612acc6941ba12d81888b0cb7, type: 3}
+  m_PrefabInstance: {fileID: 5699600562276294848}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc41500b7290dbe448de470557798b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JobPosting
 --- !u!224 &7575246749911617005 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2754411093919165741, guid: 842ff83612acc6941ba12d81888b0cb7, type: 3}

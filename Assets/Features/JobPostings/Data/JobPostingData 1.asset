@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39c8e4d338e5a244becaf0e67bd1e8a, type: 3}
   m_Name: JobPostingData 1
   m_EditorClassIdentifier: Assembly-CSharp::JobPostingData
-  JobTitle: 
-  CompanyName: 
-  JobDescription: 
-  Location: 
-  JobRole: 1
+  _jobTitle: Job Title
+  _companyName: Company Name
+  _jobDescription: Job Description
+  _location: Location
+  _jobType: 0

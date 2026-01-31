@@ -18,7 +18,13 @@ MonoBehaviour:
   - ChoiceText: Oh so you like gambling?
     NextNode: {fileID: 11400000, guid: e1ebc76bf24cb284c8ba6072811ddaff, type: 2}
     _randomNextNodes: []
-  _choicePools: []
+  _jobType: 0
+  _dialogueType: 0
+  _questionDifficulty: 0
+  _specialTag: 
+  _isDialogueFollowUp: 0
+  _choicePools:
+  - {fileID: 0}
   _randomChoicesLimit: 0
   _nextNode: {fileID: 0}
   _randomNextNodes: []
