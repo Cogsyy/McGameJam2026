@@ -7,17 +7,22 @@ public class FocusInteractable : SimpleInteractable
 	[SerializeField] private float _heightOffset = 1.6f;
     [SerializeField] private bool _lookAtTarget = true;
 
-	protected override void OnValidate()
+	protected override void Reset()
 	{
-		base.OnValidate();
+		base.Reset();
 		if (_viewPoint == null)
 		{
-            //Create a new child transform viewpoint as a default
-			_viewPoint = new GameObject("ViewPoint").transform;
-			_viewPoint.parent = transform;
-            //Place the viewpoint in front of the object where someone could stand in front of
-			_viewPoint.localPosition = Vector3.forward * 2;
-			_viewPoint.localRotation = Quaternion.identity;
+            //Check if a child already exists and use that
+            _viewPoint = transform.Find("ViewPoint");
+            if (_viewPoint == null)
+            {
+                //Create a new child transform viewpoint as a default
+                _viewPoint = new GameObject("ViewPoint").transform;
+                _viewPoint.parent = transform;
+                //Place the viewpoint in front of the object where someone could stand in front of
+                _viewPoint.localPosition = Vector3.forward * 2;
+                _viewPoint.localRotation = Quaternion.identity;
+            }
 		}
 	}
 

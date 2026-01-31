@@ -12,7 +12,8 @@ public class InteractionController : MonoBehaviour
 	[SerializeField] private Camera _camera;
 	[SerializeField] private TMP_Text _interactionPromptUI;
 
-	private IInteractable _currentInteractable;
+	private IInteractable _currentLookingInteractable;
+    private IInteractable _currentInteractable;
 
 	private void Update()
 	{
@@ -20,8 +21,9 @@ public class InteractionController : MonoBehaviour
 
 		if (Input.GetKeyDown(_interactionKey) || Input.GetMouseButtonDown(0))
 		{
-			if (_currentInteractable != null)
+			if (_currentLookingInteractable != null)
 			{
+                _currentInteractable = _currentLookingInteractable;
 				_currentInteractable.Interact();
 			}
 		}
@@ -42,15 +44,15 @@ public class InteractionController : MonoBehaviour
 			IInteractable interactable = hit.collider.GetComponent<IInteractable>();
 			if (interactable != null)
 			{
-				if (_currentInteractable != interactable)
+				if (_currentLookingInteractable != interactable && _currentInteractable != interactable && interactable.CanInteract())
 				{
-					ClearCurrentInteractable();
-					_currentInteractable = interactable;
-					_currentInteractable.OnHoverEnter();
+					ClearCurrentLookingInteractable();
+					_currentLookingInteractable = interactable;
+					_currentLookingInteractable.OnHoverEnter();
 					
 					if (_interactionPromptUI != null)
 					{
-						_interactionPromptUI.text = "Press " + _interactionKey.ToString() + "or left mouse to interact";
+						_interactionPromptUI.text = "Press " + _interactionKey.ToString() + " or left mouse to interact";
 						_interactionPromptUI.gameObject.SetActive(true);
 					}
 				}
@@ -59,15 +61,15 @@ public class InteractionController : MonoBehaviour
 			}
 		}
 
-		ClearCurrentInteractable();
+		ClearCurrentLookingInteractable();
 	}
 
-	private void ClearCurrentInteractable()
+	private void ClearCurrentLookingInteractable()
 	{
-		if (_currentInteractable != null)
+		if (_currentLookingInteractable != null)
 		{
-			_currentInteractable.OnHoverExit();
-			_currentInteractable = null;
+			_currentLookingInteractable.OnHoverExit();
+			_currentLookingInteractable = null;
 			
 			if (_interactionPromptUI != null)
 			{

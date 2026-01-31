@@ -5,13 +5,15 @@ public class SimpleInteractable : MonoBehaviour, IInteractable
 	[Header("Settings")]
 	[SerializeField] private string _message = "Interacted!";
 	[SerializeField] private Material _highlightMaterial;
+    [SerializeField] private bool _cursorVisibleOnInteract = false;
 
 	[Header("References")]
 	[SerializeField] private Renderer _renderer;
 
 	private Material _originalMaterial;
 
-	protected virtual void OnValidate()
+    
+	protected virtual void Reset()
 	{
 		if (_renderer == null)
 		{
@@ -34,9 +36,24 @@ public class SimpleInteractable : MonoBehaviour, IInteractable
 		}
 	}
 
+    protected virtual void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OnExitInteractable();
+        }
+    }
+
+    public virtual bool CanInteract()
+    {
+        return true;
+    }
+
 	public virtual void Interact()
 	{
 		Debug.Log($"{gameObject.name}: {_message}");
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = _cursorVisibleOnInteract;
 	}
 
 	public virtual void OnHoverEnter()
@@ -54,4 +71,10 @@ public class SimpleInteractable : MonoBehaviour, IInteractable
 			_renderer.sharedMaterial = _originalMaterial;
 		}
 	}
+
+    protected virtual void OnExitInteractable()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
+    }
 }
