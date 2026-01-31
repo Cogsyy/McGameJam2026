@@ -14,11 +14,23 @@ public class DialogueManager : MonoBehaviour
 	public event Action<DialogueNode> OnNodeChanged;
 	public event Action OnDialogueEnded;
 
+	private JobPostingData _jobPostingData;
+
 	private DialogueNode _currentNode;
 	private bool _isDialogueActive;
 	private List<DialogueResponseButton> _responseButtons = new List<DialogueResponseButton>();
 
 	public bool IsDialogueActive => _isDialogueActive;
+
+
+	public void SetJobInterviewPostingData(JobPostingData data)
+	{
+		// Example method to demonstrate interaction with JobPostingData
+		if (data != null && _mainDialogue != null)
+		{
+			_jobPostingData = data;
+		}
+	}
 
 	public void StartDialogue(DialogueNode startNode)
 	{

@@ -4,8 +4,9 @@ public class Computer : FocusInteractable
 {
 	[SerializeField] private Canvas _computerCanvas;
 	[SerializeField] private GamblingPage _gamblingPage;
+    [SerializeField] private HorseRacingPage _horeRacingPage;
 
-	protected override void Reset()
+    protected override void Reset()
 	{
 		base.Reset();
 		cursorVisibleOnInteract = true;
@@ -38,4 +39,12 @@ public class Computer : FocusInteractable
 			_gamblingPage.gameObject.SetActive(true);
 		}
 	}
+
+    public void OnClickHorseRacing()
+    {
+        if (_horeRacingPage != null)
+        {
+            _horeRacingPage.gameObject.SetActive(true);
+        }
+    }
 }

@@ -10,11 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e7add7f3d05d7446800ca865300e9e9, type: 3}
-  m_Name: GamblingResponse2
+  m_Name: HorseRaceResponse
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _characterName: 
-  _dialogueText: You're gambling with your future
-  _choices: []
+  _dialogueText: I hope your betting on a horse from Equinox Group
+  _fixedChoices: []
+  _jobType: 0
+  _dialogueType: 0
+  _questionDifficulty: 0
+  _specialTag: 
+  _isDialogueFollowUp: 0
+  _choicePools:
+  - {fileID: 0}
+  _randomChoicesLimit: 0
   _nextNode: {fileID: 0}
   _randomNextNodes: []
-  _endsConversation: 0
