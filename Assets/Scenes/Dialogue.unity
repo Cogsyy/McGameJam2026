@@ -119,17 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &476679612 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2492494629094410194, guid: 6ea29ca395a8ff0438ab8f846e063e8f, type: 3}
-  m_PrefabInstance: {fileID: 6420999010500365930}
+--- !u!1 &69500852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66d06772bff2d9444960c0ad79793b53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueResponseButton
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 69500853}
+  m_Layer: 0
+  m_Name: MenuUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &69500853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69500852}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 765.5294, y: 275.41537, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,34 +450,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &803180270 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7382861675554882729, guid: 6ea29ca395a8ff0438ab8f846e063e8f, type: 3}
-  m_PrefabInstance: {fileID: 6420999010500365930}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!224 &1885018557 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7933907572736887168, guid: 6ea29ca395a8ff0438ab8f846e063e8f, type: 3}
-  m_PrefabInstance: {fileID: 6420999010500365930}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2063194600 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7102276957793712785, guid: 2f28f2a72bb20e5428d7eb8c4bdf9779, type: 3}
-  m_PrefabInstance: {fileID: 6934320893348506501}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7625d86a9410a754baebc2aea0d60bc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
---- !u!1001 &6420999010500365930
+--- !u!1001 &1881543443
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -531,11 +524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7571377771993468321, guid: 6ea29ca395a8ff0438ab8f846e063e8f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 960
+      value: 765.5294
       objectReference: {fileID: 0}
     - target: {fileID: 7571377771993468321, guid: 6ea29ca395a8ff0438ab8f846e063e8f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 540
+      value: 275.41537
       objectReference: {fileID: 0}
     - target: {fileID: 7571377771993468321, guid: 6ea29ca395a8ff0438ab8f846e063e8f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -554,6 +547,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ea29ca395a8ff0438ab8f846e063e8f, type: 3}
+--- !u!114 &2063194600 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7102276957793712785, guid: 2f28f2a72bb20e5428d7eb8c4bdf9779, type: 3}
+  m_PrefabInstance: {fileID: 6934320893348506501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7625d86a9410a754baebc2aea0d60bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
 --- !u!1001 &6934320893348506501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -609,15 +613,15 @@ PrefabInstance:
     - target: {fileID: 7102276957793712785, guid: 2f28f2a72bb20e5428d7eb8c4bdf9779, type: 3}
       propertyPath: _mainDialogue
       value: 
-      objectReference: {fileID: 803180270}
+      objectReference: {fileID: 0}
     - target: {fileID: 7102276957793712785, guid: 2f28f2a72bb20e5428d7eb8c4bdf9779, type: 3}
       propertyPath: _responseButton
       value: 
-      objectReference: {fileID: 476679612}
+      objectReference: {fileID: 0}
     - target: {fileID: 7102276957793712785, guid: 2f28f2a72bb20e5428d7eb8c4bdf9779, type: 3}
       propertyPath: _responsesParent
       value: 
-      objectReference: {fileID: 1885018557}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -690,7 +694,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 6420999010500365930}
-  - {fileID: 556778087}
   - {fileID: 6934320893348506501}
   - {fileID: 7953624319019716283}
+  - {fileID: 556778087}
+  - {fileID: 69500853}
+  - {fileID: 1881543443}
