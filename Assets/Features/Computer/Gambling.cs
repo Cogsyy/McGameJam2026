@@ -9,8 +9,16 @@ public class Gambling
 	public int Total => _die1 + _die2;
 	public bool IsWin => _isWin;
 
+    private int winMultiplier = 6;
+
 	public void Play()
 	{
+        if (!Player.Instance.TryRemoveMoney(10))
+        {
+            Debug.Log("Not enough money!");
+            return;
+        }
+
 		_die1 = Random.Range(1, 7);
 		_die2 = Random.Range(1, 7);
 		
