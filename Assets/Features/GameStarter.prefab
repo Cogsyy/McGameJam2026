@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameStarter
   _dialogueManager: {fileID: 0}
   _startNode: {fileID: 0}
-  _mainTheme: {fileID: 8300000, guid: 32aeaba18bddc7d459354919b19ec784, type: 3}
+  _mainTheme: {fileID: 0}
