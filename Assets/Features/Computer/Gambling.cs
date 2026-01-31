@@ -9,15 +9,9 @@ public class Gambling
 	public int Total => _die1 + _die2;
 	public bool IsWin => _isWin;
 
-    private int winMultiplier = 6;
-
-	public void Play()
+	public bool Play(int betAmount)
 	{
-        if (!Player.Instance.TryRemoveMoney(10))
-        {
-            Debug.Log("Not enough money!");
-            return;
-        }
+        Player.Instance.TryRemoveMoney(betAmount);
 
 		_die1 = Random.Range(1, 7);
 		_die2 = Random.Range(1, 7);
@@ -25,5 +19,6 @@ public class Gambling
 		_isWin = (Total == 7);
 		
 		Debug.Log($"Rolled {_die1} and {_die2} (Total: {Total}). Result: {(_isWin ? "WIN" : "LOSE")}");
+		return _isWin;
 	}
 }
