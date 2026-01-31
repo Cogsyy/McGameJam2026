@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e39c8e4d338e5a244becaf0e67bd1e8a, type: 3}
-  m_Name: JobPostingData 1
+  m_Name: JobPostingData 3
   m_EditorClassIdentifier: Assembly-CSharp::JobPostingData
-  _jobTitle: Job Title
-  _companyName: Company Name
-  _jobDescription: Job Description
-  _location: Location
-  _jobType: 0
+  _jobTitle: Beautiful Artist
+  _companyName: Picasso Interactive
+  _jobDescription: You will be painting interactive frescas in the MetaVerse
+  _location: Little Italy
+  _jobType: 1

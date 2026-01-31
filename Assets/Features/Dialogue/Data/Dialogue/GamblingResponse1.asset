@@ -14,7 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _characterName: 
   _dialogueText: I hope you win buddy
-  _choices: []
+  _fixedChoices: []
+  _jobType: 0
+  _dialogueType: 0
+  _questionDifficulty: 0
+  _specialTag: 
+  _isDialogueFollowUp: 0
+  _choicePools:
+  - {fileID: 0}
+  _randomChoicesLimit: 0
   _nextNode: {fileID: 0}
   _randomNextNodes: []
-  _endsConversation: 0
