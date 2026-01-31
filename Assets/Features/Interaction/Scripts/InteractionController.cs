@@ -18,7 +18,7 @@ public class InteractionController : MonoBehaviour
 	{
 		PerformInteractionCheck();
 
-		if (Input.GetKeyDown(_interactionKey))
+		if (Input.GetKeyDown(_interactionKey) || Input.GetMouseButtonDown(0))
 		{
 			if (_currentInteractable != null)
 			{
@@ -50,7 +50,7 @@ public class InteractionController : MonoBehaviour
 					
 					if (_interactionPromptUI != null)
 					{
-						_interactionPromptUI.text = "Press " + _interactionKey.ToString() + " to interact";
+						_interactionPromptUI.text = "Press " + _interactionKey.ToString() + "or left mouse to interact";
 						_interactionPromptUI.gameObject.SetActive(true);
 					}
 				}
