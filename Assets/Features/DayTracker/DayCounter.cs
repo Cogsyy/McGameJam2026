@@ -4,7 +4,7 @@ using TMPro;
 public class DayCounter : MonoBehaviour
 {
     public TextMeshProUGUI dayLabel;
-    //public GameControlelr gameController;
+    //public GameController gameController;
 
     void Start()
     {
