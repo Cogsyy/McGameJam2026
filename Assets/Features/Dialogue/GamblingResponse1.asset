@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e7add7f3d05d7446800ca865300e9e9, type: 3}
-  m_Name: GamblingResponse
+  m_Name: GamblingResponse1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _characterName: 
-  _dialogueText: Oh, so you like gambling?
+  _dialogueText: I hope you win buddy
   _choices: []
+  _nextNode: {fileID: 0}
+  _randomNextNodes: []
+  _endsConversation: 0

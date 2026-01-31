@@ -15,9 +15,16 @@ MonoBehaviour:
   _characterName: CEO
   _dialogueText: So what do you like to do in your spare time?
   _choices:
-  - ChoiceText: Go gambling
-    NextNode: {fileID: 11400000, guid: ac7312ef591146b429a9d7202d604615, type: 2}
-  - ChoiceText: Bet on horse races
+  - ChoiceText: Gambling
     NextNode: {fileID: 0}
-  - ChoiceText: Drink
-    NextNode: {fileID: 0}
+    EndsConversation: 0
+    _randomNextNodes:
+    - {fileID: 11400000, guid: e1ebc76bf24cb284c8ba6072811ddaff, type: 2}
+    - {fileID: 11400000, guid: d9a9582ed6ec7784592aaf2918789283, type: 2}
+  - ChoiceText: Betting on horse races
+    NextNode: {fileID: 11400000, guid: 79416095ec1269143b121923bcf6a288, type: 2}
+    EndsConversation: 0
+    _randomNextNodes: []
+  _nextNode: {fileID: 0}
+  _randomNextNodes: []
+  _endsConversation: 0
