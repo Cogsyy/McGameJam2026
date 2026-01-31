@@ -10,6 +10,6 @@ public class DialogueResponseButton : MonoBehaviour
     public void Setup(DialogueChoice choice)
     {
         _buttonText.text = choice.ChoiceText;
-        _button.onClick.AddListener(() => choice.NextNode);
+        //_button.onClick.AddListener(() => choice.NextNode);
     }
 }
