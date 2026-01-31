@@ -447,6 +447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   _message: Interacted!
   _highlightMaterial: {fileID: 2100000, guid: 0e7f9d91f7d5ad34ba933ce5e7f8a26b, type: 2}
+  _cursorVisibleOnInteract: 1
   _renderer: {fileID: 3265368018879620723}
   _viewPoint: {fileID: 1643620013743020351}
   _heightOffset: 1.6
@@ -463,7 +464,8 @@ GameObject:
   - component: {fileID: 719848845318581941}
   - component: {fileID: 4683451884321206426}
   - component: {fileID: 6760761888715867607}
-  m_Layer: 0
+  - component: {fileID: 6564329733888877037}
+  m_Layer: 3
   m_Name: AppShortcut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -528,6 +530,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6564329733888877037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3463739029515267647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6fca13011cb961458216b378a1a58be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleInteractable
+  _message: Interacted!
+  _highlightMaterial: {fileID: 0}
+  _cursorVisibleOnInteract: 0
+  _renderer: {fileID: 0}
 --- !u!1 &4492767913654005526
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FocusInteractable
   _message: Interacted!
   _highlightMaterial: {fileID: 2100000, guid: 0e7f9d91f7d5ad34ba933ce5e7f8a26b, type: 2}
+  _cursorVisibleOnInteract: 0
   _renderer: {fileID: 7182606725116923780}
   _viewPoint: {fileID: 7336710329725338946}
   _heightOffset: 1.6

@@ -13,7 +13,16 @@ public class InteractionController : MonoBehaviour
 	[SerializeField] private TMP_Text _interactionPromptUI;
 
 	private IInteractable _currentLookingInteractable;
-    private IInteractable _currentInteractable;
+	private IInteractable _currentInteractable;
+	private FirstPersonCamera _fpCamera;
+
+	private void Start()
+	{
+		if (_camera != null)
+		{
+			_fpCamera = _camera.GetComponent<FirstPersonCamera>();
+		}
+	}
 
 	private void Update()
 	{
@@ -23,26 +32,42 @@ public class InteractionController : MonoBehaviour
 		{
 			if (_currentLookingInteractable != null)
 			{
-                _currentInteractable = _currentLookingInteractable;
-                _currentInteractable.OnHoverExit();
+				_currentInteractable = _currentLookingInteractable;
+				_currentLookingInteractable.OnHoverExit();
+				_currentLookingInteractable = null;
+				
 				_currentInteractable.Interact();
+				
+				if (_fpCamera != null)
+				{
+					_fpCamera.SetMouseLookEnabled(false);
+				}
+				
+				if (_interactionPromptUI != null)
+				{
+					_interactionPromptUI.gameObject.SetActive(false);
+				}
 			}
 		}
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (_currentInteractable != null)
-            {
-                _currentInteractable.OnExitInteractable();
-                _interactionPromptUI.gameObject.SetActive(false);
-                _currentInteractable = null;
-            }
-        }
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			if (_currentInteractable != null)
+			{
+				_currentInteractable.OnExitInteractable();
+				_currentInteractable = null;
+			}
+			
+			if (_fpCamera != null)
+			{
+				_fpCamera.SetMouseLookEnabled(true);
+			}
+		}
 	}
 
 	private void PerformInteractionCheck()
 	{
-		if (_camera == null)
+		if (_camera == null || _currentInteractable != null)
 		{
 			return;
 		}
@@ -55,7 +80,7 @@ public class InteractionController : MonoBehaviour
 			IInteractable interactable = hit.collider.GetComponent<IInteractable>();
 			if (interactable != null)
 			{
-				if (_currentLookingInteractable != interactable && _currentInteractable != interactable && interactable.CanInteract())
+				if (_currentLookingInteractable != interactable && interactable.CanInteract())
 				{
 					ClearCurrentLookingInteractable();
 					_currentLookingInteractable = interactable;

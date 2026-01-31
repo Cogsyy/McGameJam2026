@@ -1,8 +1,8 @@
 public interface IInteractable
 {
-    bool CanInteract();
+	bool CanInteract();
 	void Interact();
-    void OnExitInteractable();
+	void OnExitInteractable();
 	void OnHoverEnter();
 	void OnHoverExit();
 }
