@@ -20,6 +20,7 @@ public class JobPostingData : ScriptableObject
     [SerializeField] private string _jobDescription;
     [SerializeField] private string _location;
 
+    [SerializeField, Tooltip("To tag specific data")] private string _dataTag = string.Empty;
     [SerializeField] private JobType _jobType;
 
     public GUID JobID => _jobID;
