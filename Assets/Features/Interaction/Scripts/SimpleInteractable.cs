@@ -11,6 +11,16 @@ public class SimpleInteractable : MonoBehaviour, IInteractable
 
 	private Material _originalMaterial;
 
+    protected virtual void OnValidate()
+    {
+        if (_renderer == null)
+        {
+            _renderer = GetComponent<Renderer>();
+            //Look for default highlight material in the project
+            _highlightMaterial = Resources.Load<Material>("Highlighted");
+        }
+    }
+
 	protected virtual void Start()
 	{
 		if (_renderer == null)
