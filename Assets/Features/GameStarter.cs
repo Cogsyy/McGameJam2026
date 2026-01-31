@@ -11,9 +11,14 @@ public class GameStarter : MonoBehaviour
 	private void Start()
 	{
 		if (_dialogueManager != null && _startNode != null)
+		{
 			_dialogueManager.StartDialogue(_startNode);
+		}
 
 		// Play music
-		AudioManager.Instance.PlayMusic(_mainTheme);
+		if (AudioManager.Instance != null && _mainTheme != null)
+		{
+			AudioManager.Instance.PlayMusic(_mainTheme);
+		}
 	}
 }

@@ -42,7 +42,7 @@ public class AudioManager : MonoBehaviour
 	{
 		if (_musicSource == null)
 		{
-            Debug.LogError("AudioManager: No music source found!");
+			Debug.LogError("AudioManager: No music source found!");
 			return;
 		}
 
@@ -55,7 +55,7 @@ public class AudioManager : MonoBehaviour
 	{
 		if (_sfxSource == null)
 		{
-            Debug.LogError("AudioManager: No SFX source found!");
+			Debug.LogError("AudioManager: No SFX source found!");
 			return;
 		}
 
