@@ -3,7 +3,8 @@ using UnityEngine;
 public class Computer : FocusInteractable
 {
 	[SerializeField] private Canvas _computerCanvas;
-	
+	[SerializeField] private GamblingPage _gamblingPage;
+
 	protected override void Reset()
 	{
 		base.Reset();
@@ -32,6 +33,9 @@ public class Computer : FocusInteractable
 
 	public void OnClickGambling()
 	{
-		Debug.Log("Gambling!");
+		if (_gamblingPage != null)
+		{
+			_gamblingPage.gameObject.SetActive(true);
+		}
 	}
 }
