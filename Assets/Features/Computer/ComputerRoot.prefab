@@ -5231,6 +5231,7 @@ MonoBehaviour:
   _horeRacingPage: {fileID: 7829557329109869978}
   _shopPage: {fileID: 7262586762772412333}
   _guruPage: {fileID: 0}
+  _computerSound: {fileID: 0}
 --- !u!1 &6447815538781160837
 GameObject:
   m_ObjectHideFlags: 0
@@ -8763,6 +8764,7 @@ MonoBehaviour:
   _horeRacingPage: {fileID: 7829557329109869978}
   _shopPage: {fileID: 7262586762772412333}
   _guruPage: {fileID: 7936599193906031193}
+  _computerSound: {fileID: 8300000, guid: 81b12404df19a41c79c3a4a9e001902b, type: 3}
 --- !u!65 &1560244972922759445
 BoxCollider:
   m_ObjectHideFlags: 0

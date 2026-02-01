@@ -7,6 +7,7 @@ public class Computer : FocusInteractable
     [SerializeField] private HorseRacingPage _horeRacingPage;
 	[SerializeField] private ShopPage _shopPage;
 	[SerializeField] private GuruPage _guruPage;
+	[SerializeField] private AudioClip _computerSound;
 
 	protected override void Start()
 	{
@@ -34,7 +35,7 @@ public class Computer : FocusInteractable
 	public override void Interact()
 	{
 		base.Interact();
-		
+		AudioManager.Instance.PlaySFX(_computerSound);
 		if (_computerCanvas != null)
 		{
 			_computerCanvas.enabled = true;
