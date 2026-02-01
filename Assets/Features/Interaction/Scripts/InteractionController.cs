@@ -15,6 +15,7 @@ public class InteractionController : MonoBehaviour
 	private IInteractable _currentLookingInteractable;
 	private IInteractable _currentInteractable;
 	private FirstPersonCamera _fpCamera;
+	private Collider _lastHitCollider;
 
 	private void Start()
 	{
@@ -77,7 +78,17 @@ public class InteractionController : MonoBehaviour
 
 		if (Physics.Raycast(ray, out hit, _interactionRange, _interactableLayer))
 		{
-			IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+			// Check if we already looked at this exact collider
+			if (hit.collider == _lastHitCollider)
+			{
+				return;
+			}
+			
+			_lastHitCollider = hit.collider;
+
+			// Check current collider and its parents for IInteractable
+			IInteractable interactable = hit.collider.GetComponentInParent<IInteractable>();
+			
 			if (interactable != null)
 			{
 				if (_currentLookingInteractable != interactable && interactable.CanInteract())
@@ -97,6 +108,7 @@ public class InteractionController : MonoBehaviour
 			}
 		}
 
+		_lastHitCollider = null;
 		ClearCurrentLookingInteractable();
 	}
 

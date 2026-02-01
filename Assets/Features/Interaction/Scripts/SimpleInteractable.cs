@@ -59,7 +59,7 @@ public class SimpleInteractable : MonoBehaviour, IInteractable
 
 	public virtual void OnHoverEnter()
 	{
-		if (_renderer != null && _highlightMaterial != null)
+		if (_renderer != null && _highlightMaterial != null && _renderer.sharedMaterial != _highlightMaterial)
 		{
 			_renderer.sharedMaterial = _highlightMaterial;
 		}
@@ -67,7 +67,7 @@ public class SimpleInteractable : MonoBehaviour, IInteractable
 
 	public virtual void OnHoverExit()
 	{
-		if (_renderer != null)
+		if (_renderer != null && _originalMaterial != null && _renderer.sharedMaterial != _originalMaterial)
 		{
 			_renderer.sharedMaterial = _originalMaterial;
 		}

@@ -8728,6 +8728,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1560244972922759445}
   m_SourcePrefab: {fileID: 100100000, guid: 09a53c4fcbaa85e47a45314e8ac90405, type: 3}
+--- !u!23 &6190953370395655177 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -4683669308469848369, guid: 09a53c4fcbaa85e47a45314e8ac90405, type: 3}
+  m_PrefabInstance: {fileID: 7704230551606127302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7362124318898968471 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 09a53c4fcbaa85e47a45314e8ac90405, type: 3}
@@ -8748,7 +8753,7 @@ MonoBehaviour:
   _message: Interacted!
   _highlightMaterial: {fileID: 2100000, guid: 0e7f9d91f7d5ad34ba933ce5e7f8a26b, type: 2}
   cursorVisibleOnInteract: 0
-  _renderer: {fileID: 7483893531342390860}
+  _renderer: {fileID: 6190953370395655177}
   _viewPoint: {fileID: 8873066988095887322}
   _heightOffset: 0
   _lookAtTarget: 0

@@ -8,8 +8,9 @@ public class Computer : FocusInteractable
 	[SerializeField] private ShopPage _shopPage;
 	[SerializeField] private GuruPage _guruPage;
 
-	private void Start()
+	protected override void Start()
 	{
+		base.Start();
 		if (_gamblingPage != null)
 		{
 			_gamblingPage.gameObject.SetActive(false);
