@@ -6,6 +6,7 @@ public class GuruPage : MonoBehaviour, IShop
 {
 	[Header("Skills")]
 	[SerializeField] private List<GuruUIItem> _skillSlots = new List<GuruUIItem>();
+    [SerializeField] private SkillsDisplay _skillsDisplay;
 	[Header("SFX")]
 	[SerializeField] private AudioClip _shuffleSFX;
 	[SerializeField] private AudioClip _dealSFX;
@@ -71,6 +72,7 @@ public class GuruPage : MonoBehaviour, IShop
 			}
 			Debug.Log($"Purchased skill {skill.SkillName} for ${skill.Price}");
 			Player.Instance.UnlockSkill(skill.ID);
+            _skillsDisplay.DisplaySkills();
 			
 			// Remove from currently displayed
 			_currentlyDisplayedSkills.Remove(skill);

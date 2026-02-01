@@ -21,9 +21,9 @@ public class SkillsDisplay : MonoBehaviour
     public void DisplaySkills()
     {
         // set the level to the one saved in gamecontroller
-        labels[0].text = "programming";
-        labels[1].text = "art";
-        labels[2].text = "design";
-        labels[3].text = "music";
+        labels[0].text = "programming level: " + Player.Instance.programmingSkill;
+        labels[1].text = "art level: " + Player.Instance.artSkill;
+        labels[2].text = "design level: " + Player.Instance.designSkill;
+        labels[3].text = "music level: " + Player.Instance.musicSkill;
     }
 }
