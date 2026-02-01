@@ -10,4 +10,6 @@ public class ClothingItem
     public bool isUnlocked;
     public bool isEquipped;
     public string bodyPart;
+    public string hairModel;
+    public Texture texture;
 }
