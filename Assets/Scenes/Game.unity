@@ -93,8 +93,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 8ee39d4cd45b7904e8ecfb7f6345f495, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 22e3564d08bbd4f4d8500049c1dc8ce6, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -203,6 +203,133 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1144906080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1144906083}
+  - component: {fileID: 1144906082}
+  - component: {fileID: 1144906081}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1144906081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144906080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!108 &1144906082
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144906080}
+  m_Enabled: 1
+  serializedVersion: 12
+  m_Type: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.47
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
+--- !u!4 &1144906083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144906080}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalPosition: {x: 0, y: 14.85, z: -10.09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &282065463978746133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -399,362 +526,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3204742412020995610, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.size
-      value: 29
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[0].bodyPart
-      value: body
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[0].itemIcon
-      value: 
-      objectReference: {fileID: 257902526345160822, guid: 2c3dee703f40ca444884bbc11a4bcdd4, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[0].itemName
-      value: Green_Hoodie
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[1].bodyPart
-      value: body
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[1].itemIcon
-      value: 
-      objectReference: {fileID: -1693557772885657729, guid: cd409787aaaddec49a498bcf550224dc, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[1].itemName
-      value: Brown_Hoodie
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[2].bodyPart
-      value: body
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[2].itemIcon
-      value: 
-      objectReference: {fileID: -7432361424510267669, guid: 7fcd5d63db0a78544a4ae4acadf5ffd7, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[2].itemName
-      value: Red_Hoodie
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[3].bodyPart
-      value: body
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[3].itemIcon
-      value: 
-      objectReference: {fileID: 2983396129237504386, guid: 73090356d45f9ca46ad947ad89d684eb, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[3].itemName
-      value: Black_Suit
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[4].bodyPart
-      value: body
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[4].itemIcon
-      value: 
-      objectReference: {fileID: -8218584130191911205, guid: 7bee2f19bfcc19e45aff46be05a568fc, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[4].itemName
-      value: Blue_Suit
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[5].bodyPart
-      value: body
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[5].itemIcon
-      value: 
-      objectReference: {fileID: 5595620550901723933, guid: 1a12846d35e05e84c8afdef817e31ab7, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[5].itemName
-      value: Purple_Suit
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[6].bodyPart
-      value: body
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[6].itemIcon
-      value: 
-      objectReference: {fileID: 4859785960619931837, guid: cdf6ae718344e0840aec94ac822fc531, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[6].itemName
-      value: Blue_Hoodie
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[7].bodyPart
-      value: body
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[7].itemIcon
-      value: 
-      objectReference: {fileID: -3449108294933322566, guid: 5a252c894a3a83545882224d68ea7c38, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[7].itemName
-      value: Green_Hoodie
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[8].bodyPart
-      value: body
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[8].itemIcon
-      value: 
-      objectReference: {fileID: 3895477791213742693, guid: 84d1a273bfe11b8449df3a14f2df2c10, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[8].itemName
-      value: Red_Hoodie
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[9].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[9].itemIcon
-      value: 
-      objectReference: {fileID: -8635654303145081748, guid: 62a5f280c455a834f94b45a2f5553794, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[9].itemName
-      value: Purple_Hair
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[10].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[10].itemIcon
-      value: 
-      objectReference: {fileID: 4658704368423427462, guid: 647ec77c40021d34280dc82f55021850, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[10].itemName
-      value: Brown_Hair
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[11].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[11].itemIcon
-      value: 
-      objectReference: {fileID: 4596585809968764165, guid: b7d80990854f9bb4686a6b472f575603, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[11].itemName
-      value: Blonde_Hair
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[12].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[12].itemIcon
-      value: 
-      objectReference: {fileID: -4202800209803111058, guid: 68618403a1a62ff40a5a8d89149c55a6, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[12].itemName
-      value: Blue_Hair
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[13].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[13].itemIcon
-      value: 
-      objectReference: {fileID: -1077674788265456020, guid: c7023ce3c890f0940963170c1561e2ed, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[13].itemName
-      value: Red_Hair
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[14].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[14].itemIcon
-      value: 
-      objectReference: {fileID: 7110211559683091508, guid: 066bcd20f2dc59944aeec9f3296fe4e1, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[14].itemName
-      value: Bald
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[15].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[15].itemIcon
-      value: 
-      objectReference: {fileID: -7871579372067654894, guid: fa833e6fd82dbcd46987ef2b42490f80, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[15].itemName
-      value: Blonde_Fancy_Hair
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[16].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[16].itemIcon
-      value: 
-      objectReference: {fileID: 3855525765869890273, guid: c06d1c2127cbf0b4ebdca2b0f71260ea, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[16].itemName
-      value: Brown_Fancy_Hair
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[17].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[17].itemIcon
-      value: 
-      objectReference: {fileID: 7458803020431025491, guid: 060d0f418a519f34d8c7dc2aef69179c, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[17].itemName
-      value: Green_Fancy_Hair
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[18].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[18].itemIcon
-      value: 
-      objectReference: {fileID: -8140422671985824130, guid: 59f448283b5d9564cabf616ae7d587c8, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[18].itemName
-      value: Pink_Fancy_Hair
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[19].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[19].itemIcon
-      value: 
-      objectReference: {fileID: 6361501661167777618, guid: 274769031d3739a41ae0fcd470ec7303, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[19].itemName
-      value: White_Fancy_Hair
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[20].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[20].itemIcon
-      value: 
-      objectReference: {fileID: -6136529058472994107, guid: 586b5dd1ce37f854e889c6c43b693c60, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[20].itemName
-      value: Blonde_Bun
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[21].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[21].itemIcon
-      value: 
-      objectReference: {fileID: 668751927787128235, guid: 5426061da3c4ea44694ec9504bb067d9, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[21].itemName
-      value: Blue_Bun
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[22].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[22].itemIcon
-      value: 
-      objectReference: {fileID: 5961951794405996826, guid: 52893f2053e1db64da70a9609d07d8e8, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[22].itemName
-      value: Brown_Bun
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[23].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[23].itemIcon
-      value: 
-      objectReference: {fileID: -4590823670269908639, guid: dc9aa736eb41f1d4d8ed2a7a5ffa4f53, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[23].itemName
-      value: Pink_Bun
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[24].bodyPart
-      value: head
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[24].itemIcon
-      value: 
-      objectReference: {fileID: -2937512449904573928, guid: d9b27bbf43f09e346a83d818e4581112, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[24].itemName
-      value: Orange_Bun
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[25].bodyPart
-      value: legs
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[25].itemIcon
-      value: 
-      objectReference: {fileID: -2715218977527064078, guid: cc4aca77f38423b4ab623d2f53ac9f6b, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[25].itemName
-      value: Pink_Pants
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[26].bodyPart
-      value: legs
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[26].itemIcon
-      value: 
-      objectReference: {fileID: -6241743843722419158, guid: 3d0e789c006dbd94fa4deb43ca36d94c, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[26].itemName
-      value: Grey_Pants
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[27].bodyPart
-      value: legs
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[27].itemIcon
-      value: 
-      objectReference: {fileID: -7113414753803910335, guid: 1bbda2da3cfd89a4daec07e971f65625, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[27].itemName
-      value: Blue_Pants
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[28].bodyPart
-      value: legs
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[28].itemIcon
-      value: 
-      objectReference: {fileID: -6241743843722419158, guid: 3d0e789c006dbd94fa4deb43ca36d94c, type: 3}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[28].itemName
-      value: Grey_Pants
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
-      propertyPath: _clothingItems.Array.data[1].isEquipped
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8615820132930099546, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
@@ -1116,3 +887,4 @@ SceneRoots:
   - {fileID: 2435126403883038084}
   - {fileID: 4723409216982405373}
   - {fileID: 587557830251607478}
+  - {fileID: 1144906083}

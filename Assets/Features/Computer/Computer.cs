@@ -5,6 +5,24 @@ public class Computer : FocusInteractable
 	[SerializeField] private Canvas _computerCanvas;
 	[SerializeField] private GamblingPage _gamblingPage;
     [SerializeField] private HorseRacingPage _horeRacingPage;
+	[SerializeField] private ShopPage _shopPage;
+	[SerializeField] private GuruPage _guruPage;
+
+	private void Start()
+	{
+		if (_gamblingPage != null)
+		{
+			_gamblingPage.gameObject.SetActive(false);
+		}
+		if (_horeRacingPage != null)
+		{
+			_horeRacingPage.gameObject.SetActive(false);
+		}
+		if (_shopPage != null)
+		{
+			_shopPage.gameObject.SetActive(false);
+		}
+	}
 
     protected override void Reset()
 	{
@@ -30,6 +48,22 @@ public class Computer : FocusInteractable
 		{
 			_computerCanvas.enabled = false;
 		}
+		if (_gamblingPage != null)
+		{
+			_gamblingPage.gameObject.SetActive(false);
+		}
+		if (_horeRacingPage != null)
+		{
+			_horeRacingPage.gameObject.SetActive(false);
+		}
+		if (_shopPage != null)
+		{
+			_shopPage.gameObject.SetActive(false);
+		}
+		if (_guruPage != null)
+		{
+			_guruPage.gameObject.SetActive(false);
+		}
 	}
 
 	public void OnClickGambling()
@@ -47,4 +81,20 @@ public class Computer : FocusInteractable
             _horeRacingPage.gameObject.SetActive(true);
         }
     }
+
+	public void OnClickShop()
+    {
+        if (_shopPage != null)
+        {
+            _shopPage.gameObject.SetActive(true);
+        }
+    }
+
+	public void OnClickGuru()
+	{
+		if (_guruPage != null)
+		{
+			_guruPage.gameObject.SetActive(true);
+		}
+	}
 }
