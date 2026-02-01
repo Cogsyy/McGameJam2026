@@ -51,8 +51,6 @@ public class DialogueManager : MonoBehaviour
 		{
 			_jobPostingData = data;
 		}
-
-		StartDialogue();
 	}
 
 	public void ResetState()

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SimpleInteractable : MonoBehaviour, IInteractable
@@ -11,6 +12,8 @@ public class SimpleInteractable : MonoBehaviour, IInteractable
 	[SerializeField] private Renderer _renderer;
 
 	private Material _originalMaterial;
+
+	public Action OnInteract;
 
 	protected virtual void Reset()
 	{
@@ -55,6 +58,8 @@ public class SimpleInteractable : MonoBehaviour, IInteractable
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
 		}
+
+		OnInteract?.Invoke();
 	}
 
 	public virtual void OnHoverEnter()
