@@ -912,8 +912,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8412184492462604749, guid: 8d1f264721782ca49a819b71102d68b0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7953624319019716285}
   m_SourcePrefab: {fileID: 100100000, guid: 8d1f264721782ca49a819b71102d68b0, type: 3}
+--- !u!1 &7953624319019716284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8412184492462604749, guid: 8d1f264721782ca49a819b71102d68b0, type: 3}
+  m_PrefabInstance: {fileID: 7953624319019716283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7953624319019716285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7953624319019716284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1c821db9030de409614f2ce326b550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AreaMovement
+  interviewRoomTransform: {fileID: 0}
+  homeRoomTransform: {fileID: 0}
+  jobBoardTransform: {fileID: 0}
+  mainCamera: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

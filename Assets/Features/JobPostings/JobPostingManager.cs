@@ -12,8 +12,6 @@ public class JobPostingManager : MonoBehaviour
 
     public void InitializeJobPostings(int nbPostings)
     {
-
-
 		int nbPostingsToInitialize = Mathf.Min(nbPostings, jobPostingObjects.Count);
 
         // Get Unique random indexes

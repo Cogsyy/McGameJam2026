@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameStarter : MonoBehaviour
@@ -8,29 +9,30 @@ public class GameStarter : MonoBehaviour
 	[SerializeField] private AudioClip _mainTheme;
 
 	[SerializeField] private ClothingItem[] _clothingItems;
-	[SerializeField] private ConversationSkill[] _conversationSkills;
+
+	[SerializeField] private int _numberJobPostings = 3;
+	[SerializeField] private int _skillprice = 100;
+	private List<ConversationSkill> _conversationSkills = new List<ConversationSkill>();
 
 	private static GameStarter _instance;
 
-	private void Awake()
-	{
-		_instance = this;
-	}
 
 	public static GameStarter Instance => _instance;
 
 	public ClothingItem[] ClothingItems => _clothingItems;
-	public ConversationSkill[] ConversationSkills => _conversationSkills;
+	public List<ConversationSkill> ConversationSkills => _conversationSkills;
+
+	private void Awake()
+	{
+		_instance = this;
+		PopulateSkills();
+	}
 
 	private void Start()
 	{
 		if (_dialogueManager != null)
 		{
-			//_dialogueManager.StartDialogue();
-			_dialogueManager.OnDialogueEnded += () =>
-			{
-				Debug.Log("Dialogue ended. Go home.");
-			};
+			_dialogueManager.OnDialogueEnded += OnDialogueEnded;
 		}
 
 		// Play music
@@ -42,8 +44,55 @@ public class GameStarter : MonoBehaviour
 		JobPostingManager jobPostingManager = null;
 		if(jobPostingManager = FindAnyObjectByType<JobPostingManager>())
 		{
-			int nbPostings = 3;
-			jobPostingManager.InitializeJobPostings(nbPostings);
+			jobPostingManager.InitializeJobPostings(_numberJobPostings);
+		}
+	}
+
+	private void Update()
+	{
+		if(Input.GetKeyDown(KeyCode.F6))
+		{
+			UnlockAllSkills();
+		}
+	}
+
+	private void UnlockAllSkills()
+	{
+		foreach(var skill in ConversationSkills)
+		{
+			Player.Instance.UnlockSkill(skill.ID);
+		}
+	}
+
+	private void OnDialogueEnded()
+	{
+		Debug.Log("Dialogue ended. Go home.");
+	}
+
+	private string JobTypeToSkillName(JobType jobType)
+	{
+		return jobType switch
+		{
+			JobType.Programmer => "Programming",
+			JobType.Designer => "Game Design",
+			JobType.Musician => "Music",
+			JobType.Artist => "Art",
+			_ => "Hot Tip",
+		};
+	}
+
+	private void PopulateSkills()
+	{
+		List<DialogueNode> allQuestions = FindAnyObjectByType<DialoguesGenerator>().GetDialogues(DialogueType.Question);
+
+		foreach (var question in allQuestions)
+		{
+			ConversationSkill skill = new ConversationSkill();
+			skill.Price = _skillprice;
+			skill.ID = question.GetDialogueID(); // Using dialogue text as ID for simplicity
+			skill.SkillName = JobTypeToSkillName(question.JobType);
+
+			_conversationSkills.Add(skill);
 		}
 	}
 }
