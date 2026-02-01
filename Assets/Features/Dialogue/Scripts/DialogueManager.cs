@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Random = UnityEngine.Random;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class DialogueManager : MonoBehaviour
 	[SerializeField] private TMP_Text _mainDialogue;
 	[SerializeField] private DialogueResponseButton _responseButton;
 	[SerializeField] private Transform _responsesParent;
+	[SerializeField] private GameObject _dialogueCanvasObject;
 
 	[SerializeField] private int _nbGreetingsDialogue = 1;
 	[SerializeField] private int _nbConversationDialogue = 3;
@@ -73,6 +75,7 @@ public class DialogueManager : MonoBehaviour
 	{
 		ResetState();
 
+		_dialogueCanvasObject.SetActive(true);
 		_isDialogueActive = true;
 		_currentDialoguePhase = DialogueType.Greetings;
 		SetNextDialogueNode();
@@ -83,7 +86,6 @@ public class DialogueManager : MonoBehaviour
 	{
 		ProcessChoice(choice);
 		SetNextDialogueNode();
-		return;
 	}
 
 	public void EndDialogue()
@@ -92,6 +94,10 @@ public class DialogueManager : MonoBehaviour
 		_currentNode = null;
 		ClearButtons();
 		OnDialogueEnded?.Invoke();
+
+		_dialogueCanvasObject.SetActive(false);
+		FindAnyObjectByType<AreaMovement>().GoHome();
+
 	}
 
 	private void ProcessChoice(DialogueChoice choice)

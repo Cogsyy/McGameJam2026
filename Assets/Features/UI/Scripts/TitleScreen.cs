@@ -1,16 +1,26 @@
 using UnityEngine;
+using System;
 
 public class TitleScreen : MonoBehaviour
 {
 	[Header("References")]
 	[SerializeField] private CanvasFader _canvasFader;
     [SerializeField] private Canvas _playerCanvas;
+	[SerializeField] private ResumeIntroAnimation _resumeAnimation;
+	[SerializeField] private FirstPersonCamera _fpCamera;
 
 	[Header("Audio")]
 	[SerializeField] private AudioClip _titleMusic;
 	[SerializeField] private AudioClip _gameMusic;
 
 	private bool _hasStarted;
+
+	public static event Action OnGameStart;
+
+	private void Awake()
+	{
+		_fpCamera.SetMouseLookEnabled(false);
+	}
 
 	private void Start()
 	{
@@ -51,7 +61,17 @@ public class TitleScreen : MonoBehaviour
 		{
 			AudioManager.Instance.PlayMusic(_gameMusic, true);
 		}
-        
-        _playerCanvas.enabled = true;
+
+		if (_resumeAnimation != null)
+		{
+			_resumeAnimation.PlayAnimation(OnResumeAnimationComplete);
+		}
     }
+
+	private void OnResumeAnimationComplete()
+	{
+		_playerCanvas.enabled = true;
+		_fpCamera.SetMouseLookEnabled(true);
+		OnGameStart?.Invoke();
+	}
 }

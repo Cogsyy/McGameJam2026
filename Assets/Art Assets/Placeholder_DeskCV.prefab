@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6188464253540799625}
   - component: {fileID: 1475646499706340485}
   - component: {fileID: 4888559570094588369}
+  - component: {fileID: 5889086681185742481}
   m_Layer: 3
   m_Name: Placeholder_DeskCV
   m_TagString: Untagged
@@ -128,9 +129,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FocusInteractable
   _message: Interacted!
   _highlightMaterial: {fileID: 2100000, guid: 0e7f9d91f7d5ad34ba933ce5e7f8a26b, type: 2}
+  cursorVisibleOnInteract: 0
   _renderer: {fileID: 6188464253540799625}
   _viewPoint: {fileID: 1793450081103956508}
   _heightOffset: 1.6
+  _lookAtTarget: 1
+  _focusDuration: 0.5
+--- !u!114 &5889086681185742481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5381922499127036844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8c3b611baa40ca40b0aa37e6bb27255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResumeIntroAnimation
+  _startTransform: {fileID: 0}
+  _deskTransform: {fileID: 0}
+  _delay: 2
+  _moveDuration: 1.5
+  _moveCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8189133094674161934
 GameObject:
   m_ObjectHideFlags: 0
