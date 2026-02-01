@@ -18,6 +18,14 @@ public class GuruPage : MonoBehaviour, IShop
 		Restock();
 	}
 
+	private void OnEnable()
+	{
+		if (_shuffleSFX != null && AudioManager.Instance != null)
+		{
+			AudioManager.Instance.PlaySFX(_shuffleSFX);
+		}
+	}
+
 	public void Restock()
 	{
 		// Filter out skills already purchased
@@ -54,11 +62,6 @@ public class GuruPage : MonoBehaviour, IShop
 			{
 				_skillSlots[i].gameObject.SetActive(true);
 				_skillSlots[i].Setup(this, _currentlyDisplayedSkills[i]);
-
-				if (_dealSFX != null && AudioManager.Instance != null)
-				{
-					AudioManager.Instance.PlaySFX(_dealSFX);
-				}
 			}
 		}
 	}
