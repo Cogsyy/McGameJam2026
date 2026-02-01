@@ -20,6 +20,11 @@ public class ResumeIntroAnimation : MonoBehaviour
 		}
 	}
 
+	public void PlayAnimationBackwards(Action onComplete)
+	{
+		StartCoroutine(AnimateResumeBackwards(onComplete));
+	}
+
 	public void PlayAnimation(Action onComplete)
 	{
 		StartCoroutine(AnimateResume(onComplete));
@@ -48,6 +53,31 @@ public class ResumeIntroAnimation : MonoBehaviour
 		while (elapsed < _moveDuration)
 		{
 			elapsed += Time.deltaTime;
+			float t = _moveCurve.Evaluate(elapsed / _moveDuration);
+			
+			transform.position = Vector3.Lerp(startPos, targetPos, t);
+			transform.rotation = Quaternion.Lerp(startRot, targetRot, t);
+			
+			yield return null;
+		}
+
+		transform.position = targetPos;
+		transform.rotation = targetRot;
+
+		onComplete?.Invoke();
+	}
+
+	private IEnumerator AnimateResumeBackwards(Action onComplete)
+	{
+		float elapsed = _moveDuration;
+		Vector3 startPos = _deskTransform.position;
+		Quaternion startRot = _deskTransform.rotation;
+		Vector3 targetPos = _startTransform.position;
+		Quaternion targetRot = _startTransform.rotation;
+
+		while (elapsed > 0)
+		{
+			elapsed -= Time.deltaTime;
 			float t = _moveCurve.Evaluate(elapsed / _moveDuration);
 			
 			transform.position = Vector3.Lerp(startPos, targetPos, t);
