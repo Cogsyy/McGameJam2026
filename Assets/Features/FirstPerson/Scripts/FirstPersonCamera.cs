@@ -11,6 +11,8 @@ public class FirstPersonCamera : MonoBehaviour
 	private float _rotationX = 0f;
 	private float _rotationY = 0f;
 	private bool _isMouseLookEnabled = true;
+	public bool IsMouseLookEnabled => _isMouseLookEnabled;
+	private bool _skipFrame = false;
 	private Coroutine _movementCoroutine;
 
 	private Vector3 _previousPosition;
@@ -20,21 +22,25 @@ public class FirstPersonCamera : MonoBehaviour
 
 	private void Start()
 	{
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
-		SyncRotationState(transform.rotation);
+		SyncRotationState();
 	}
 
 	private void Update()
 	{
 		if (_isMouseLookEnabled)
 		{
+			if (_skipFrame)
+			{
+				_skipFrame = false;
+				return;
+			}
+
 			float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Time.deltaTime;
 			float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Time.deltaTime;
 
 			_rotationY += mouseX;
 			_rotationX -= mouseY;
-			//_rotationX = Mathf.Clamp(_rotationX, _minVerticalAngle, _maxVerticalAngle);
+			_rotationX = Mathf.Clamp(_rotationX, _minVerticalAngle, _maxVerticalAngle);
 
 			transform.localRotation = Quaternion.Euler(_rotationX, _rotationY, 0f);
 		}
@@ -51,7 +57,7 @@ public class FirstPersonCamera : MonoBehaviour
 		transform.position = position;
 		transform.rotation = rotation;
 
-		SyncRotationState(rotation);
+		SyncRotationState();
 
 		Debug.Log("Set position: " + position + " and rotation: " + rotation);
 	}
@@ -114,7 +120,7 @@ public class FirstPersonCamera : MonoBehaviour
 		transform.position = targetPosition;
 		transform.rotation = targetRotation;
 		
-		SyncRotationState(targetRotation);
+		SyncRotationState();
 		_movementCoroutine = null;
 	}
 
@@ -127,9 +133,9 @@ public class FirstPersonCamera : MonoBehaviour
 		}
 	}
 
-	private void SyncRotationState(Quaternion rotation)
+	private void SyncRotationState()
 	{
-		Vector3 euler = rotation.eulerAngles;
+		Vector3 euler = transform.localEulerAngles;
 		
 		_rotationX = euler.x;
 		if (_rotationX > 180f) _rotationX -= 360f;
@@ -145,6 +151,8 @@ public class FirstPersonCamera : MonoBehaviour
 		{
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
+			_skipFrame = true;
+			SyncRotationState();
 		}
 		else
 		{

@@ -27,6 +27,11 @@ public class InteractionController : MonoBehaviour
 
 	private void Update()
 	{
+		if (_fpCamera != null && !_fpCamera.IsMouseLookEnabled && _currentInteractable == null)
+		{
+			return;
+		}
+
 		PerformInteractionCheck();
 
 		if (Input.GetKeyDown(_interactionKey) || Input.GetMouseButtonDown(0))
@@ -68,7 +73,7 @@ public class InteractionController : MonoBehaviour
 	
 	private void PerformInteractionCheck()
 	{
-		if (_camera == null || _currentInteractable != null)
+		if (_camera == null || _currentInteractable != null || (_fpCamera != null && !_fpCamera.IsMouseLookEnabled))
 		{
 			return;
 		}
