@@ -23,5 +23,7 @@ public class JobPosting : MonoBehaviour
     {
         if(_jobPostingData == null) return;
 		FindAnyObjectByType<DialogueManager>().SetJobInterviewPostingData(_jobPostingData);
+
+        FindAnyObjectByType<AreaMovement>().GoToInterview();
     }
 }

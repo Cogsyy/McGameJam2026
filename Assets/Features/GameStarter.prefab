@@ -308,16 +308,14 @@ MonoBehaviour:
     bodyPart: legs
     hairModel: 
     texture: {fileID: 2800000, guid: a91167bb6d5a12b4b93e6e8fe739d915, type: 3}
-  _conversationSkills:
-  - ID: 0
-    Price: 20
-    SkillName: Art
-  - ID: 1
-    Price: 20
-    SkillName: Music
-  - ID: 2
-    Price: 20
-    SkillName: Design
-  - ID: 3
-    Price: 25
-    SkillName: Programming
+  - ID: 
+    Price: 0
+    itemName: Black Pants
+    itemIcon: {fileID: 7593180097720239886, guid: 89283a4e55bbb9c44bc4e4a07998a6fc, type: 3}
+    isUnlocked: 0
+    isEquipped: 0
+    bodyPart: legs
+    hairModel: 
+    texture: {fileID: 2800000, guid: 153f8d0eae0f51d40a12cfcf8bc498f8, type: 3}
+  _numberJobPostings: 3
+  _skillprice: 100
