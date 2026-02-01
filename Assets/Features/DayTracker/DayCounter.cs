@@ -6,6 +6,8 @@ public class DayCounter : MonoBehaviour
     public int dayCount = 0;
     public TextMeshProUGUI dayLabel;
     //public GameController gameController;
+    public int numberJobPostings = 3;
+
 
     void Start()
     {
@@ -15,6 +17,12 @@ public class DayCounter : MonoBehaviour
     public void AdvanceDay()
     {
         UpdateDayDisplay(dayCount++);
+
+		JobPostingManager jobPostingManager = null;
+		if(jobPostingManager = FindAnyObjectByType<JobPostingManager>())
+		{
+			jobPostingManager.InitializeJobPostings(numberJobPostings);
+		}
 	}
 
     public void UpdateDayDisplay(int currentDay)
