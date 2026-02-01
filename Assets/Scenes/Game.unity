@@ -868,6 +868,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2372667856957786320, guid: 329aef4aa490cb945a2f524daa3469d2, type: 3}
+      propertyPath: _fpCamera
+      value: 
+      objectReference: {fileID: 1441090093}
     - target: {fileID: 3397705693284392137, guid: 329aef4aa490cb945a2f524daa3469d2, type: 3}
       propertyPath: m_Name
       value: PauseMenu

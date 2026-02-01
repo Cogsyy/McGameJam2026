@@ -63,11 +63,6 @@ public class InteractionController : MonoBehaviour
 				_currentInteractable.OnExitInteractable();
 				_currentInteractable = null;
 			}
-			
-			if (_fpCamera != null)
-			{
-				_fpCamera.SetMouseLookEnabled(true);
-			}
 		}
 	}
 	
