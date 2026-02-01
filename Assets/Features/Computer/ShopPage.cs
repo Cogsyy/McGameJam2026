@@ -73,6 +73,8 @@ public class ShopPage : MonoBehaviour
 			
 			// Remove from currently displayed and update UI
 			_currentlyDisplayedItems.Remove(item);
+
+			item.isUnlocked = true;
             return true;
 		}
 		else

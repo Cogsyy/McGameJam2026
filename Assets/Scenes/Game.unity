@@ -614,10 +614,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4067228302936117184, guid: 9c5c547cb00ec85498fb9ed13db6431d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5524664641288825778, guid: 9c5c547cb00ec85498fb9ed13db6431d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
