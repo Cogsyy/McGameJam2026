@@ -21,7 +21,11 @@ public class JobPosting : MonoBehaviour
 
     public void OnChosenJob()
     {
-        if(_jobPostingData == null) return;
+        if(_jobPostingData == null)
+        {
+            Debug.LogWarning("JobPosting: No job posting data assigned!");
+			return;
+        }
 		FindAnyObjectByType<DialogueManager>().SetJobInterviewPostingData(_jobPostingData);
 
         FindAnyObjectByType<AreaMovement>().GoToInterview();

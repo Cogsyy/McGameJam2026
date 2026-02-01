@@ -1,15 +1,13 @@
 using UnityEngine;
 using TMPro;
-using System.Collections.Generic;
 
 public class DayCounter : MonoBehaviour
 {
-    [SerializeField] private ShopPage _shop;
-    [SerializeField] private GuruPage _guru;
-
     public int dayCount = 0;
     public TextMeshProUGUI dayLabel;
     //public GameController gameController;
+    public int numberJobPostings = 3;
+
 
     void Start()
     {
@@ -20,8 +18,11 @@ public class DayCounter : MonoBehaviour
     {
         UpdateDayDisplay(dayCount++);
 
-        _shop.Restock();
-        _guru.Restock();
+		JobPostingManager jobPostingManager = null;
+		if(jobPostingManager = FindAnyObjectByType<JobPostingManager>(FindObjectsInactive.Include))
+		{
+			jobPostingManager.InitializeJobPostings(numberJobPostings);
+		}
 	}
 
     public void UpdateDayDisplay(int currentDay)
