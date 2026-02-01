@@ -39,13 +39,15 @@ public class FirstPersonCamera : MonoBehaviour
 	{
 		transform.position = position;
 		transform.rotation = rotation;
-		
+
 		// Reset internal vertical rotation to match the new orientation
 		_verticalRotation = rotation.eulerAngles.x;
 		if (_verticalRotation > 180f)
 		{
 			_verticalRotation -= 360f;
 		}
+
+		Debug.Log("Set position: " + position + " and rotation: " + rotation);
 	}
 
 	public void SetMouseLookEnabled(bool enabled)
