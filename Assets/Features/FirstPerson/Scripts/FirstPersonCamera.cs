@@ -17,7 +17,7 @@ public class FirstPersonCamera : MonoBehaviour
 
 	private Vector3 _previousPosition;
 	private Quaternion _previousRotation;
-	private bool _isFocused = false;
+	public bool _isFocused = false;
 	private float _currentFocusDuration = 0.5f;
 
 	private void Start()

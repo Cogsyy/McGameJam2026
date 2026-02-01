@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -15,7 +16,16 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !paused)
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            StartCoroutine(WaitThenPause());
+        }
+    }
+
+    private IEnumerator WaitThenPause()
+    {
+        yield return null;
+        if (!paused && !_fpCamera._isFocused)
         {
             ChangePauseState();
         }
