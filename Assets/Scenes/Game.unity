@@ -3102,6 +3102,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4083962340612145187, guid: 147a31af0d73a8048ace7d7cf2714709, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083962340612145187, guid: 147a31af0d73a8048ace7d7cf2714709, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402010599091269120, guid: 147a31af0d73a8048ace7d7cf2714709, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21698111
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402010599091269120, guid: 147a31af0d73a8048ace7d7cf2714709, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21698111
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402010599091269120, guid: 147a31af0d73a8048ace7d7cf2714709, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21698111
+      objectReference: {fileID: 0}
     - target: {fileID: 7773138953931217313, guid: 147a31af0d73a8048ace7d7cf2714709, type: 3}
       propertyPath: m_Name
       value: InteractionController
