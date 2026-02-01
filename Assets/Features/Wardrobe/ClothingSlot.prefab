@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9088658940761709103
 RectTransform:
   m_ObjectHideFlags: 0
@@ -166,6 +166,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bfabab067890e74f858f9c8c70ef38e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  itemIcon: {fileID: 8695548599169320726}
+  equippedIndicator: {fileID: 814769354475962210}
+  slotButton: {fileID: 3746780948424142873}
+  previewGuy: {fileID: 0}
 --- !u!1 &4158944596077047425
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +290,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2437852468860081038}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4396351796537606446
 GameObject:
   m_ObjectHideFlags: 0
