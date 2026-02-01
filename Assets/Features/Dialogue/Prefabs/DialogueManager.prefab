@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2126219929034903220}
   - component: {fileID: 7102276957793712785}
+  - component: {fileID: 929944585353330975}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -47,3 +48,22 @@ MonoBehaviour:
   _mainDialogue: {fileID: 0}
   _responseButton: {fileID: 0}
   _responsesParent: {fileID: 0}
+  _dialogueCanvasObject: {fileID: 0}
+  _nbGreetingsDialogue: 1
+  _nbConversationDialogue: 3
+  _nbConversationsIncorrectToFail: 2
+  _nbQuestionsDialogue: 4
+  _nbQuestionsIncorrectToFail: 1
+--- !u!114 &929944585353330975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4571057758652591774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9a0a9003677934ba73fea955a02870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialoguesGenerator
+  _dialoguePoolData: {fileID: 11400000, guid: c0479d045b966d84e94088c4fa58de05, type: 2}
