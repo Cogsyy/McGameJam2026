@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public enum DialogueType
@@ -47,6 +48,8 @@ public class DialogueNode : ScriptableObject
 	public IReadOnlyList<DialogueChoice> FixedChoices => _fixedChoices;
 	public IReadOnlyList<DialogueChoicePool> ChoicePools => _choicePools;
 	public int RandomChoicesLimit => _randomChoicesLimit;
+
+	public string GetDialogueID() => DialogueText;
 
 	public DialogueNode GetNextNode()
 	{
