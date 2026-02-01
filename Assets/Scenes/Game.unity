@@ -1428,6 +1428,26 @@ PrefabInstance:
       propertyPath: _resumeAnimation
       value: 
       objectReference: {fileID: 310023929}
+    - target: {fileID: 2598894190008573386, guid: 434c17200f0b47d4c86c2110822851cc, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598894190008573386, guid: 434c17200f0b47d4c86c2110822851cc, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0.25490198
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598894190008573386, guid: 434c17200f0b47d4c86c2110822851cc, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598894190008573386, guid: 434c17200f0b47d4c86c2110822851cc, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598894190008573386, guid: 434c17200f0b47d4c86c2110822851cc, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 1107296255
+      objectReference: {fileID: 0}
     - target: {fileID: 5158229018856971727, guid: 434c17200f0b47d4c86c2110822851cc, type: 3}
       propertyPath: m_Name
       value: IntroCanvas
