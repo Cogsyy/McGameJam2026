@@ -8,6 +8,7 @@ public class GameStarter : MonoBehaviour
 	[SerializeField] private AudioClip _mainTheme;
 
 	[SerializeField] private ClothingItem[] _clothingItems;
+	[SerializeField] private ConversationSkill[] _conversationSkills;
 
 	private static GameStarter _instance;
 
@@ -19,6 +20,7 @@ public class GameStarter : MonoBehaviour
 	public static GameStarter Instance => _instance;
 
 	public ClothingItem[] ClothingItems => _clothingItems;
+	public ConversationSkill[] ConversationSkills => _conversationSkills;
 
 	private void Start()
 	{

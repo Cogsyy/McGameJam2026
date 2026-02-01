@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 using TMPro;
 
 public class Player : MonoBehaviour
@@ -28,6 +29,9 @@ public class Player : MonoBehaviour
 	[SerializeField] public float money = 100f;
 
 	public float Money => money;
+
+	private List<string> _unlockedSkills = new List<string>();
+	public List<string> UnlockedSkills => _unlockedSkills;
 
 	private void Awake()
 	{
@@ -63,5 +67,14 @@ public class Player : MonoBehaviour
 		
 		Debug.LogWarning("Insufficient funds!");
 		return false;
+	}
+
+	public void UnlockSkill(string skillId)
+	{
+		if (!_unlockedSkills.Contains(skillId))
+		{
+			_unlockedSkills.Add(skillId);
+			Debug.Log($"Unlocked skill: {skillId}");
+		}
 	}
 }
