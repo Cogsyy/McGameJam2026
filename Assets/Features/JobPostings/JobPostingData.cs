@@ -28,6 +28,7 @@ public class JobPostingData : ScriptableObject
     public string CompanyName => _companyName;
     public string JobDescription => _jobDescription;
     public string Location => _location;
+    public string DataTag => _dataTag;
     public JobType JobType => _jobType;
 
 	void OnEnable()
