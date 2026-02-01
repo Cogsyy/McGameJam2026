@@ -10,8 +10,27 @@ public class JobPostingManager : MonoBehaviour
     [SerializeField]
     private List<JobPostingData> jobPostingData;
 
-    public void InitializeJobPostings(int nbPostings)
+    [SerializeField] private List<DayJobData> dayJobsData;
+    [SerializeField] private List<DayJob> dayJobObjects;
+    [SerializeField] private int dayJobOddOutOf100 = 50;
+
+	public void InitializeJobPostings(int nbPostings)
     {
+        foreach(var jobPosting in jobPostingObjects)
+        {
+            jobPosting.gameObject.SetActive(false);
+		}
+        foreach(var dayJob in dayJobObjects)
+        {
+            dayJob.gameObject.SetActive(false);
+		}
+
+
+        bool hasDayJob = Random.Range(0, 100) < dayJobOddOutOf100;
+
+        if(hasDayJob)
+            nbPostings -= 1;
+
 		int nbPostingsToInitialize = Mathf.Min(nbPostings, jobPostingObjects.Count);
 
         // Get Unique random indexes
@@ -26,12 +45,6 @@ public class JobPostingManager : MonoBehaviour
             randomIndexes.Add(randomIndex);
         }
 
-		// Deactivate all job postings first
-		for(int i = 0; i < jobPostingObjects.Count; i++)
-		{
-			jobPostingObjects[i].gameObject.SetActive(false);
-		}
-
         int[] dataIndices = randomIndexes.ToArray();
 		for (int i = 0; i < dataIndices.Length; i++)
         {
@@ -39,6 +52,22 @@ public class JobPostingManager : MonoBehaviour
 			JobPostingData data = jobPostingData[dataIndices[i]];
 			postingObject.SetJobPostingData(data);
 			postingObject.gameObject.SetActive(true);
+		}
+
+        if (hasDayJob)
+        {
+            if(dayJobObjects.Count == 0 || dayJobsData.Count == 0)
+            {
+                Debug.LogWarning("No Day Jobs available to initialize.");
+            }
+            else
+            {
+                int randomDayJobIndex = Random.Range(0, dayJobsData.Count);
+                DayJobData dayJobData = dayJobsData[randomDayJobIndex];
+                DayJob dayJobObject = dayJobObjects[0];
+                dayJobObject.SetDayJobData(dayJobData);
+                dayJobObject.gameObject.SetActive(true);
+            }
 		}
 	}
 }

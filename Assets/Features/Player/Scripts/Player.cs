@@ -6,6 +6,11 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private TMP_Text _moneyText;
 
+	public int programmingSkill;
+	public int designSkill;
+	public int artSkill;
+	public int musicSkill;
+
 	private static Player _instance;
 	public static Player Instance
 	{
