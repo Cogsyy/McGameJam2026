@@ -215,6 +215,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c3b611baa40ca40b0aa37e6bb27255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResumeIntroAnimation
+--- !u!114 &378786288 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3334123072457054098, guid: b78842957bfa8a942b1e3751bf723496, type: 3}
+  m_PrefabInstance: {fileID: 8177961979539469844}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e892b962cc316014e967880ac6e29d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopPage
 --- !u!1 &478365267
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +726,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbbc3a50597453d4f9e8f5f45cff90f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirstPersonCamera
+--- !u!114 &1472133991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2641569542527502950, guid: b78842957bfa8a942b1e3751bf723496, type: 3}
+  m_PrefabInstance: {fileID: 8177961979539469844}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82be756b4b584244b9ec2ed7323fd370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GuruPage
 --- !u!1 &1496193326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1480,14 @@ PrefabInstance:
       propertyPath: interviewRoomTransform
       value: 
       objectReference: {fileID: 1022570918}
+    - target: {fileID: 1763033834159911893, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
+      propertyPath: _guru
+      value: 
+      objectReference: {fileID: 1472133991}
+    - target: {fileID: 1763033834159911893, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
+      propertyPath: _shop
+      value: 
+      objectReference: {fileID: 378786288}
     - target: {fileID: 3204742412020995610, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

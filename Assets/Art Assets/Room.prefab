@@ -1616,10 +1616,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6ccca2fd3c922a4780271fd3aae7b3d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4363978568535453281}
+      addedObject: {fileID: 1822051472166371865}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6ccca2fd3c922a4780271fd3aae7b3d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1822051472166371865}
+      addedObject: {fileID: 6297338369857497044}
   m_SourcePrefab: {fileID: 100100000, guid: a6ccca2fd3c922a4780271fd3aae7b3d, type: 3}
 --- !u!4 &6967956937127127171 stripped
 Transform:
@@ -1631,22 +1631,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a6ccca2fd3c922a4780271fd3aae7b3d, type: 3}
   m_PrefabInstance: {fileID: 7438150634732457832}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4363978568535453281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7780240236388168249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6fca13011cb961458216b378a1a58be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SimpleInteractable
-  _message: Interacted!
-  _highlightMaterial: {fileID: 2100000, guid: 0e7f9d91f7d5ad34ba933ce5e7f8a26b, type: 2}
-  cursorVisibleOnInteract: 0
-  _renderer: {fileID: 8140268653895586796}
 --- !u!65 &1822051472166371865
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1668,6 +1652,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.05303237, y: 0.11995682, z: 0.013452176}
   m_Center: {x: -0.0001950534, y: 0.000030940406, z: 0.005696346}
+--- !u!114 &6297338369857497044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7780240236388168249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f54e5ffccb113e4eb867cfbe4f89101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BedInteractable
+  _message: Interacted!
+  _highlightMaterial: {fileID: 2100000, guid: 0e7f9d91f7d5ad34ba933ce5e7f8a26b, type: 2}
+  cursorVisibleOnInteract: 0
+  _renderer: {fileID: 8140268653895586796}
 --- !u!23 &8140268653895586796 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: a6ccca2fd3c922a4780271fd3aae7b3d, type: 3}

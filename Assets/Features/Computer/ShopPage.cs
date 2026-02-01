@@ -2,7 +2,12 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
-public class ShopPage : MonoBehaviour
+public interface IShop
+{
+	void Restock();
+}
+
+public class ShopPage : MonoBehaviour, IShop
 {
 	[Header("Items")]
 	[SerializeField] private List<ShopUIItem> _itemSlots = new List<ShopUIItem>();
