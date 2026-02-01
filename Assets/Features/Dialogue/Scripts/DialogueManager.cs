@@ -55,6 +55,7 @@ public class DialogueManager : MonoBehaviour
 
 	public void ResetState()
 	{
+		_mainDialogue.text = "";
 		_currentNode = null;
 		_currentNodesOfDialoguePhase = new List<DialogueNode>();
 		_currentNodeIndex = 0;
@@ -92,6 +93,7 @@ public class DialogueManager : MonoBehaviour
 		_currentNode = null;
 		ClearButtons();
 		OnDialogueEnded?.Invoke();
+		_mainDialogue.text = "";
 
 		_dialogueCanvasObject.SetActive(false);
 		FindAnyObjectByType<AreaMovement>().GoHome();
