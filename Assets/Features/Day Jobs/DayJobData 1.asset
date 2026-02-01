@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DayJobData 1
   m_EditorClassIdentifier: Assembly-CSharp::DayJobData
   JobTitle: Begger
-  CompanyName: The Streets
-  JobDescription: Homeless for a day
-  moneyEarned: 15
+  CompanyName: Outside
+  JobDescription: Interested in sampling the homeless lifestyle for a day?
+  moneyEarned: 25

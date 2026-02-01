@@ -12,8 +12,9 @@ public class JobPostingManager : MonoBehaviour
 
     [SerializeField] private List<DayJobData> dayJobsData;
     [SerializeField] private List<DayJob> dayJobObjects;
+    [SerializeField] private int dayJobOddOutOf100 = 50;
 
-    public void InitializeJobPostings(int nbPostings)
+	public void InitializeJobPostings(int nbPostings)
     {
         foreach(var jobPosting in jobPostingObjects)
         {
@@ -25,9 +26,10 @@ public class JobPostingManager : MonoBehaviour
 		}
 
 
-        bool hasDayJob = Random.Range(0, 1) < 0.5f;
+        bool hasDayJob = Random.Range(0, 100) < dayJobOddOutOf100;
 
-        nbPostings -= 1;
+        if(hasDayJob)
+            nbPostings -= 1;
 
 		int nbPostingsToInitialize = Mathf.Min(nbPostings, jobPostingObjects.Count);
 
