@@ -15,10 +15,10 @@ public class DayJob : MonoBehaviour
 		if(!data)
 			return;
 		dayJobData = data;
-		_jobTitleText.text = data.JobTitle;
+		_jobTitleText.text = data.JobTitle + " [JOB FOR 1 DAY]";
 		_companyNameText.text = data.CompanyName;
 		_jobDescriptionText.text = data.JobDescription;
-		_moneyText.text = data.moneyEarned.ToString();
+		_moneyText.text = data.moneyEarned.ToString() + "$";
 	}
 
 	public void OnChosenJob()
