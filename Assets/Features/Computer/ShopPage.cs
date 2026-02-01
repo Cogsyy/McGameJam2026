@@ -2,23 +2,14 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
-[System.Serializable]
-public class ShopItem
-{
-	public string ID;
-	public string Name;
-	public int Price;
-	public Sprite Icon;
-}
-
 public class ShopPage : MonoBehaviour
 {
 	[Header("Items")]
-	[SerializeField] private List<ShopItem> _allPossibleItems = new List<ShopItem>();
 	[SerializeField] private List<ShopUIItem> _itemSlots = new List<ShopUIItem>();
 
+	private List<ClothingItem> _allPossibleItems = new List<ClothingItem>();
 	private List<string> _purchasedItemIDs = new List<string>();
-	private List<ShopItem> _currentlyDisplayedItems = new List<ShopItem>();
+	private List<ClothingItem> _currentlyDisplayedItems = new List<ClothingItem>();
 
 	private void Start()
 	{
@@ -28,7 +19,7 @@ public class ShopPage : MonoBehaviour
 	public void Restock()
 	{
 		// Filter out items already purchased
-		List<ShopItem> availableItems = _allPossibleItems
+		List<ClothingItem> availableItems = GameStarter.Instance.ClothingItems.ToList()
 			.Where(item => !_purchasedItemIDs.Contains(item.ID))
 			.ToList();
 
@@ -60,11 +51,11 @@ public class ShopPage : MonoBehaviour
 		}
 	}
 
-	public bool TryPurchaseItem(ShopItem item)
+	public bool TryPurchaseItem(ClothingItem item)
 	{
 		if (Player.Instance.TryRemoveMoney(item.Price))
 		{
-			Debug.Log($"Purchased {item.Name} for ${item.Price}");
+			Debug.Log($"Purchased {item.itemName} for ${item.Price}");
 			_purchasedItemIDs.Add(item.ID);
 			
 			// Remove from currently displayed and update UI
