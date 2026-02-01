@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c9db643a927d794ab7b0d465b964da4, type: 3}
+  m_Name: AllDialogues
+  m_EditorClassIdentifier: Assembly-CSharp::DialoguePoolData
+  _dialoguePool:
+  - {fileID: 11400000, guid: dbc45ee5e5a838249a42e4aad389c415, type: 2}
+  - {fileID: 11400000, guid: b5b46b46a7c25b64b9a106d0c9048edc, type: 2}
+  - {fileID: 11400000, guid: 15ef65cb2b162f34cb0acd4e426dff4e, type: 2}
+  - {fileID: 11400000, guid: f7bae01278c863742a57de402282a300, type: 2}
+  - {fileID: 11400000, guid: 38d2940543ce24940962955d6360713e, type: 2}
+  - {fileID: 11400000, guid: 79faa50342fc09a4a8451a0450472ed5, type: 2}
+  - {fileID: 11400000, guid: e1ebc76bf24cb284c8ba6072811ddaff, type: 2}
+  - {fileID: 11400000, guid: 05ae92d2f3352d84e88869c1adb97c41, type: 2}
+  - {fileID: 11400000, guid: e7f6aa430cea0784e8cd2bbcd4a3f087, type: 2}
+  - {fileID: 11400000, guid: 3b097dce2a41c3949bf202f7fc8934c8, type: 2}
+  - {fileID: 11400000, guid: 9ec494c577c18724a9d5b726d6900694, type: 2}
+  - {fileID: 11400000, guid: 3141aca5e0e2e6e4bb99209141230835, type: 2}
+  - {fileID: 11400000, guid: 5b78bb687c2424d48b83ad2f2fbecf21, type: 2}
+  - {fileID: 11400000, guid: c13f0d264d158c84493bf1b59214d158, type: 2}
+  - {fileID: 11400000, guid: 2a56ebefd24b8be4f9e008604304c3aa, type: 2}
