@@ -9,6 +9,7 @@ public class Computer : FocusInteractable
 	[SerializeField] private GuruPage _guruPage;
 	[SerializeField] private AudioClip _computerSound;
 	[SerializeField] private AudioClip _computerMusic;
+	[SerializeField] private AudioClip _homeMusic;
 
 	protected override void Start()
 	{
@@ -68,6 +69,8 @@ public class Computer : FocusInteractable
 		{
 			_guruPage.gameObject.SetActive(false);
 		}
+		AudioManager.Instance.PlayMusic(_homeMusic, true);
+
 	}
 
 	public void OnClickGambling()
