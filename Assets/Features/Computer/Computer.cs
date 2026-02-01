@@ -8,6 +8,8 @@ public class Computer : FocusInteractable
 	[SerializeField] private ShopPage _shopPage;
 	[SerializeField] private GuruPage _guruPage;
 	[SerializeField] private AudioClip _computerSound;
+	[SerializeField] private AudioClip _computerMusic;
+	[SerializeField] private AudioClip _homeMusic;
 
 	protected override void Start()
 	{
@@ -36,6 +38,7 @@ public class Computer : FocusInteractable
 	{
 		base.Interact();
 		AudioManager.Instance.PlaySFX(_computerSound);
+		AudioManager.Instance.PlayMusic(_computerMusic, true);
 		if (_computerCanvas != null)
 		{
 			_computerCanvas.enabled = true;
@@ -66,6 +69,8 @@ public class Computer : FocusInteractable
 		{
 			_guruPage.gameObject.SetActive(false);
 		}
+		AudioManager.Instance.PlayMusic(_homeMusic, true);
+
 	}
 
 	public void OnClickGambling()
