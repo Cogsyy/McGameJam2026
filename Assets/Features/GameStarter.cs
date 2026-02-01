@@ -40,12 +40,7 @@ public class GameStarter : MonoBehaviour
 		{
 			AudioManager.Instance.PlayMusic(_mainTheme);
 		}
-
-		JobPostingManager jobPostingManager = null;
-		if(jobPostingManager = FindAnyObjectByType<JobPostingManager>())
-		{
-			jobPostingManager.InitializeJobPostings(_numberJobPostings);
-		}
+		
 	}
 
 	private void Update()
