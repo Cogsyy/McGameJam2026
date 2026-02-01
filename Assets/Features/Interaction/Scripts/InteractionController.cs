@@ -27,7 +27,7 @@ public class InteractionController : MonoBehaviour
 
 	private void Update()
 	{
-		if (_fpCamera != null && !_fpCamera.IsMouseLookEnabled && _currentInteractable == null)
+		if (!_fpCamera.IsMouseLookEnabled && _currentInteractable == null)
 		{
 			return;
 		}
@@ -112,7 +112,7 @@ public class InteractionController : MonoBehaviour
 		ClearCurrentLookingInteractable();
 	}
 
-	private void ClearCurrentLookingInteractable()
+	public void ClearCurrentLookingInteractable()
 	{
 		if (_currentLookingInteractable != null)
 		{
@@ -124,5 +124,15 @@ public class InteractionController : MonoBehaviour
 				_interactionPromptUI.gameObject.SetActive(false);
 			}
 		}
+	}
+
+	public void ClearCurrentInteractable()
+	{
+		if (_currentInteractable != null)
+		{
+			_currentInteractable = null;
+		}
+
+		//_fpCamera.SetMouseLookEnabled(true);
 	}
 }
