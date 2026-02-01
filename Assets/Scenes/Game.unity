@@ -2364,6 +2364,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 88.927
       objectReference: {fileID: 0}
+    - target: {fileID: 872541585444761495, guid: b78842957bfa8a942b1e3751bf723496, type: 3}
+      propertyPath: _computerMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 252610e14e967432aa17b04575e793fb, type: 3}
     - target: {fileID: 1308881875149616420, guid: b78842957bfa8a942b1e3751bf723496, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
