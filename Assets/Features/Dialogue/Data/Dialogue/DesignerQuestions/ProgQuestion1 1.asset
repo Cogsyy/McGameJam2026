@@ -10,30 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e7add7f3d05d7446800ca865300e9e9, type: 3}
-  m_Name: ProgQuestion2 2
+  m_Name: ProgQuestion1 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _characterName: 
-  _dialogueText: What does GPU stand for?
+  _dialogueText: What helps players navigate the most?
   _fixedChoices:
-  - ChoiceText: Grand Processor United
+  - ChoiceText: Maps
     OptionalNextNode: {fileID: 0}
     Correctness: 2
     ChoiceTag: 
-  - ChoiceText: Great Pains Unites (us)
+  - ChoiceText: 'PointsOfInterest '
     OptionalNextNode: {fileID: 0}
     Correctness: 2
     ChoiceTag: 
-  - ChoiceText: Graphics Processing Unit
+  - ChoiceText: Landmarks
     OptionalNextNode: {fileID: 0}
     Correctness: 1
     ChoiceTag: 
-  - ChoiceText: GPU
+  - ChoiceText: Quest Markers!!
     OptionalNextNode: {fileID: 0}
     Correctness: 2
     ChoiceTag: 
-  _jobType: 2
+  _jobType: 3
   _dialogueType: 5
-  _questionDifficulty: 3
+  _questionDifficulty: 1
   _specialTag: 
   _isDialogueFollowUp: 0
   _choicePools:

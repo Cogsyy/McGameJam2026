@@ -10,22 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e7add7f3d05d7446800ca865300e9e9, type: 3}
-  m_Name: CultureQuestion
+  m_Name: ProgQuestion2 4
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _characterName: 
-  _dialogueText: How would you describe the culture here?
+  _dialogueText: Default stack size in Linux?
   _fixedChoices:
-  - ChoiceText: Lame
+  - ChoiceText: 8MB
+    OptionalNextNode: {fileID: 0}
+    Correctness: 1
+    ChoiceTag: 
+  - ChoiceText: 8Mb
     OptionalNextNode: {fileID: 0}
     Correctness: 2
     ChoiceTag: 
-  - ChoiceText: Very Lame
+  - ChoiceText: 16MB
     OptionalNextNode: {fileID: 0}
-    Correctness: 3
+    Correctness: 2
     ChoiceTag: 
-  _jobType: 0
+  - ChoiceText: 4MB
+    OptionalNextNode: {fileID: 0}
+    Correctness: 2
+    ChoiceTag: 
+  _jobType: 2
   _dialogueType: 5
-  _questionDifficulty: 1
+  _questionDifficulty: 3
   _specialTag: 
   _isDialogueFollowUp: 0
   _choicePools:

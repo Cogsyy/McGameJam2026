@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7add7f3d05d7446800ca865300e9e9, type: 3}
+  m_Name: Acceptance
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  _characterName: 
+  _dialogueText: What would you do if a co-worker steals your sandwhich?
+  _fixedChoices:
+  - ChoiceText: Tell CEO
+    OptionalNextNode: {fileID: 0}
+    Correctness: 2
+    ChoiceTag: 
+  - ChoiceText: Confront co-worker
+    OptionalNextNode: {fileID: 0}
+    Correctness: 0
+    ChoiceTag: 
+  - ChoiceText: Lace sandwhich with hot sauce
+    OptionalNextNode: {fileID: 0}
+    Correctness: 0
+    ChoiceTag: 
+  - ChoiceText: Take it like a champ
+    OptionalNextNode: {fileID: 0}
+    Correctness: 0
+    ChoiceTag: 
+  _jobType: 0
+  _dialogueType: 5
+  _questionDifficulty: 0
+  _specialTag: 
+  _isDialogueFollowUp: 0
+  _choicePools:
+  - {fileID: 0}
+  _randomChoicesLimit: 0
+  _nextNode: {fileID: 0}
+  _randomNextNodes: []

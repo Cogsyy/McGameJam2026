@@ -10,22 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e7add7f3d05d7446800ca865300e9e9, type: 3}
-  m_Name: JobInterestConversation
+  m_Name: ProgQuestion2 3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _characterName: 
-  _dialogueText: What got you interested in this job?
+  _dialogueText: In the time signature 6/8, how are beats grouped?
   _fixedChoices:
-  - ChoiceText: Money
+  - ChoiceText: Two groups of three eighth notes
+    OptionalNextNode: {fileID: 0}
+    Correctness: 1
+    ChoiceTag: 
+  - ChoiceText: Three groups of two eighth notes
     OptionalNextNode: {fileID: 0}
     Correctness: 2
     ChoiceTag: 
-  - ChoiceText: The culture
+  - ChoiceText: 1 group of 4 and one group of 2 eighth notes
     OptionalNextNode: {fileID: 0}
-    Correctness: 0
+    Correctness: 2
     ChoiceTag: 
-  _jobType: 0
-  _dialogueType: 2
-  _questionDifficulty: 1
+  - ChoiceText: 1 group of 2 and one group of 4 eighth notes
+    OptionalNextNode: {fileID: 0}
+    Correctness: 2
+    ChoiceTag: 
+  _jobType: 4
+  _dialogueType: 5
+  _questionDifficulty: 3
   _specialTag: 
   _isDialogueFollowUp: 0
   _choicePools:
