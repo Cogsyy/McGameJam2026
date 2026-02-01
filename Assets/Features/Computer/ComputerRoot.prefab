@@ -1382,6 +1382,8 @@ MonoBehaviour:
   - {fileID: 8170327656895302787}
   - {fileID: 4530067712857737284}
   - {fileID: 464617011846073772}
+  _shuffleSFX: {fileID: 8300000, guid: aedf4a226c04c4672bd6112efebdd692, type: 3}
+  _dealSFX: {fileID: 8300000, guid: ff7a8d0907edf4f5b99a80044f3920c9, type: 3}
 --- !u!1 &1385009336936249159
 GameObject:
   m_ObjectHideFlags: 0
@@ -2605,6 +2607,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GamblingPage
   _resultText: {fileID: 3467396413187688710}
+  _rollingSFX: {fileID: 8300000, guid: ad1094b6957804612915b6407146e5fa, type: 3}
+  _winSFX: {fileID: 8300000, guid: 8728bcf06ee0e4ee299b3f90c80596fb, type: 3}
+  _loseSFX: {fileID: 8300000, guid: b29722b5d892d4be6a905b3e2c72e147, type: 3}
 --- !u!1 &2746286769680512664
 GameObject:
   m_ObjectHideFlags: 0
@@ -2864,6 +2869,9 @@ MonoBehaviour:
   - {fileID: 4352421405991037181}
   - {fileID: 4447462500676909437}
   - {fileID: 2565867746661596816}
+  _shuffleSFX: {fileID: 8300000, guid: d9f637ba7bab04b148ae1fff3f006986, type: 3}
+  _dealSFX: {fileID: 8300000, guid: 4eef4118ddab426448713f4f6b29b803, type: 3}
+  _purchaseSFX: {fileID: 0}
 --- !u!1 &3186877128077983804
 GameObject:
   m_ObjectHideFlags: 0

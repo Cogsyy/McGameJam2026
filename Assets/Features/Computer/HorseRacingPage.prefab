@@ -1476,6 +1476,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _resultText: {fileID: 0}
+  _rollingSFX: {fileID: 8300000, guid: ad1094b6957804612915b6407146e5fa, type: 3}
+  _winSFX: {fileID: 8300000, guid: 8728bcf06ee0e4ee299b3f90c80596fb, type: 3}
+  _loseSFX: {fileID: 8300000, guid: 4fbd9c8309edc425a884ef2ce53e0744, type: 3}
 --- !u!1 &4912952126509617743
 GameObject:
   m_ObjectHideFlags: 0

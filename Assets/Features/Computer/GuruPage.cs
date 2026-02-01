@@ -6,6 +6,10 @@ public class GuruPage : MonoBehaviour
 {
 	[Header("Skills")]
 	[SerializeField] private List<GuruUIItem> _skillSlots = new List<GuruUIItem>();
+	[Header("SFX")]
+	[SerializeField] private AudioClip _shuffleSFX;
+	[SerializeField] private AudioClip _dealSFX;
+	[SerializeField] private AudioClip _purchaseSFX;
 
 	private List<ConversationSkill> _currentlyDisplayedSkills = new List<ConversationSkill>();
 
@@ -23,6 +27,11 @@ public class GuruPage : MonoBehaviour
 
 		// Shuffle and pick top slots count
 		availableSkills = availableSkills.OrderBy(x => Random.value).ToList();
+		
+		if (_shuffleSFX != null && AudioManager.Instance != null)
+		{
+			AudioManager.Instance.PlaySFX(_shuffleSFX);
+		}
 		
 		_currentlyDisplayedSkills.Clear();
 		int countToDisplay = Mathf.Min(availableSkills.Count, _skillSlots.Count);
@@ -45,6 +54,11 @@ public class GuruPage : MonoBehaviour
 			{
 				_skillSlots[i].gameObject.SetActive(true);
 				_skillSlots[i].Setup(this, _currentlyDisplayedSkills[i]);
+
+				if (_dealSFX != null && AudioManager.Instance != null)
+				{
+					AudioManager.Instance.PlaySFX(_dealSFX);
+				}
 			}
 		}
 	}
@@ -53,6 +67,10 @@ public class GuruPage : MonoBehaviour
 	{
 		if (Player.Instance.TryRemoveMoney(skill.Price))
 		{
+			if (_purchaseSFX != null && AudioManager.Instance != null)
+			{
+				AudioManager.Instance.PlaySFX(_purchaseSFX);
+			}
 			Debug.Log($"Purchased skill {skill.SkillName} for ${skill.Price}");
 			Player.Instance.UnlockSkill(skill.ID);
 			

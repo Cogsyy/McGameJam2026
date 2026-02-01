@@ -6,6 +6,9 @@ public class ShopPage : MonoBehaviour
 {
 	[Header("Items")]
 	[SerializeField] private List<ShopUIItem> _itemSlots = new List<ShopUIItem>();
+	[Header("SFX")]
+	[SerializeField] private AudioClip _shuffleSFX;
+	[SerializeField] private AudioClip _dealSFX;
 
 	private List<ClothingItem> _allPossibleItems = new List<ClothingItem>();
 	private List<string> _purchasedItemIDs = new List<string>();
@@ -25,6 +28,11 @@ public class ShopPage : MonoBehaviour
 
 		// Shuffle and pick top 3
 		availableItems = availableItems.OrderBy(x => Random.value).ToList();
+		
+		if (_shuffleSFX != null && AudioManager.Instance != null)
+		{
+			AudioManager.Instance.PlaySFX(_shuffleSFX);
+		}
 		
 		_currentlyDisplayedItems.Clear();
 		int countToDisplay = Mathf.Min(availableItems.Count, _itemSlots.Count);
@@ -47,6 +55,11 @@ public class ShopPage : MonoBehaviour
 			{
 				_itemSlots[i].gameObject.SetActive(true);
 				_itemSlots[i].Setup(this, _currentlyDisplayedItems[i]);
+
+				if (_dealSFX != null && AudioManager.Instance != null)
+				{
+					AudioManager.Instance.PlaySFX(_dealSFX);
+				}
 			}
 		}
 	}
