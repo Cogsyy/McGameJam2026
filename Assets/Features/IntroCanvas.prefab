@@ -449,7 +449,7 @@ MonoBehaviour:
   _resumeAnimation: {fileID: 0}
   _fpCamera: {fileID: 0}
   _titleMusic: {fileID: 8300000, guid: efe41c4fa86917f488f4fd5e02b073be, type: 3}
-  _gameMusic: {fileID: 8300000, guid: 252610e14e967432aa17b04575e793fb, type: 3}
+  _gameMusic: {fileID: 8300000, guid: 9085d1b6500bc47ed97b775b806679be, type: 3}
 --- !u!225 &1850595332719751222
 CanvasGroup:
   m_ObjectHideFlags: 0

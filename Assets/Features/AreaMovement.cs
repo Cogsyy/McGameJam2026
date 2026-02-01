@@ -13,6 +13,10 @@ public class AreaMovement : MonoBehaviour
 
 	[SerializeField] private GameObject jobBoard;
 
+	[SerializeField] private AudioClip _interviewMusic;
+	[SerializeField] private AudioClip _homeMusic;
+	[SerializeField] private AudioClip _doorSfx;
+
 	public void GoToInterview()
     {
 		fadeCanvas.FadeToAlpha(1, () =>
@@ -24,6 +28,9 @@ public class AreaMovement : MonoBehaviour
 			fadeCanvas.FadeToAlpha(0);
 			FindAnyObjectByType<DialogueManager>()?.StartDialogue();
 		});
+
+		AudioManager.Instance.PlayMusic(_interviewMusic);
+		AudioManager.Instance.PlaySFX(_doorSfx);
 	}
 
 
@@ -40,6 +47,8 @@ public class AreaMovement : MonoBehaviour
 			fadeCanvas.FadeToAlpha(0);
 			FindAnyObjectByType<FirstPersonCamera>().SetMouseLookEnabled(true);
 		});
+
+		AudioManager.Instance.PlayMusic(_homeMusic);
 	}
 
     public void GoToJobBoard()
