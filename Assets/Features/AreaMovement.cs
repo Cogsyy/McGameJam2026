@@ -35,6 +35,7 @@ public class AreaMovement : MonoBehaviour
 				return;
 			PlaceCameraAtTransform(homeRoomTransform);
 			fadeCanvas.FadeToAlpha(0);
+			FindAnyObjectByType<FirstPersonCamera>().SetMouseLookEnabled(true);
 		});
 	}
 
