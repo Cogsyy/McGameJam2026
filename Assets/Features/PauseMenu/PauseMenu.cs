@@ -7,6 +7,8 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private Canvas _pauseMenu;
     [SerializeField] private FirstPersonCamera _fpCamera;
+    [SerializeField] private Canvas _creditsMenu;
+
     private bool paused = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -60,5 +62,15 @@ public class PauseMenu : MonoBehaviour
     public void OnClickQuitButton()
     {
         Application.Quit();
+    }
+
+    public void OnClickCreditsButton()
+    {
+        _creditsMenu.enabled = true;
+    }
+
+    public void OnClickCloseCreditsButton()
+    {
+        _creditsMenu.enabled = false;
     }
 }
