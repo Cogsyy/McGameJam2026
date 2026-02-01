@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Random = UnityEngine.Random;
+using Unity.VisualScripting;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -10,18 +12,35 @@ public class DialogueManager : MonoBehaviour
 	[SerializeField] private DialogueResponseButton _responseButton;
 	[SerializeField] private Transform _responsesParent;
 
+	[SerializeField] private int _nbGreetingsDialogue = 1;
+	[SerializeField] private int _nbConversationDialogue = 3;
+	[SerializeField] private int _nbConversationsIncorrectToFail = 2;
+	[SerializeField] private int _nbQuestionsDialogue = 4;
+	[SerializeField] private int _nbQuestionsIncorrectToFail = 1;
+
 	public event Action<DialogueNode> OnDialogueStarted;
 	public event Action<DialogueNode> OnNodeChanged;
 	public event Action OnDialogueEnded;
 
 	private JobPostingData _jobPostingData;
+	private int _currentGreetingCount;
+	private int _currentConversationCount;
+	private int _currentQuestionCount;
+
+	private int _incorrectConversationsCount;
+	private int _incorrectQuestionsCount;
+
+	private DialogueType _currentDialoguePhase;
 
 	private DialogueNode _currentNode;
+	private List<DialogueNode> _currentNodesOfDialoguePhase;
+	private int _currentNodeIndex;
+
+
 	private bool _isDialogueActive;
 	private List<DialogueResponseButton> _responseButtons = new List<DialogueResponseButton>();
 
 	public bool IsDialogueActive => _isDialogueActive;
-
 
 	public void SetJobInterviewPostingData(JobPostingData data)
 	{
@@ -30,91 +49,41 @@ public class DialogueManager : MonoBehaviour
 		{
 			_jobPostingData = data;
 		}
+
+		StartDialogue();
 	}
 
-	public void StartDialogue(DialogueNode startNode)
+	public void ResetState()
 	{
-		if (startNode == null)
-		{
-			Debug.LogWarning("Attempted to start dialogue with a null node.");
-			return;
-		}
+		_currentNode = null;
+		_currentNodesOfDialoguePhase = new List<DialogueNode>();
+		_currentNodeIndex = 0;
 
-		_currentNode = startNode;
+		_isDialogueActive = false;
+		_currentDialoguePhase = DialogueType.Greetings;
+
+		_currentConversationCount = 0;
+		_currentGreetingCount = 0;
+		_currentQuestionCount = 0;
+		_incorrectConversationsCount = 0;
+		_incorrectQuestionsCount = 0;
+	}
+
+	public void StartDialogue()
+	{
+		ResetState();
+
 		_isDialogueActive = true;
+		_currentDialoguePhase = DialogueType.Greetings;
+		SetNextDialogueNode();
 		OnDialogueStarted?.Invoke(_currentNode);
-		OnNodeChangedCallback();
-	}
-
-	public void PickChoice(int index)
-	{
-		// Note: Using procedural generation makes index-based picking tricky.
-		// Usually called via PickChoice(DialogueChoice) from the button.
 	}
 
 	public void PickChoice(DialogueChoice choice)
 	{
-		if (!_isDialogueActive || choice == null)
-		{
-			return;
-		}
-
-		DialogueNode nextNode = choice.GetNextNode();
-
-		if (nextNode != null)
-		{
-			_currentNode = nextNode;
-			OnNodeChangedCallback();
-		}
-		else
-		{
-			EndDialogue();
-		}
-	}
-
-	public void PickChoice(DialogueNode nextNode)
-	{
-		if (!_isDialogueActive)
-		{
-			return;
-		}
-
-		if (nextNode != null)
-		{
-			_currentNode = nextNode;
-			OnNodeChangedCallback();
-		}
-		else
-		{
-			EndDialogue();
-		}
-	}
-
-	public void AdvanceDialogue()
-	{
-		if (!_isDialogueActive || _currentNode == null)
-		{
-			return;
-		}
-
-		// Only allow generic advancing if there are NO choices displayable
-		// But since we can generate them from pools, we check the current node's definitions
-		if (_currentNode.FixedChoices.Count > 0 || _currentNode.ChoicePools.Count > 0)
-		{
-			return;
-		}
-
-		DialogueNode nextNode = _currentNode.GetNextNode();
-
-		if (nextNode != null)
-		{
-			_currentNode = nextNode;
-			OnNodeChangedCallback();
-		}
-		else
-		{
-			EndDialogue();
-		}
+		ProcessChoice(choice);
+		SetNextDialogueNode();
+		return;
 	}
 
 	public void EndDialogue()
@@ -123,6 +92,172 @@ public class DialogueManager : MonoBehaviour
 		_currentNode = null;
 		ClearButtons();
 		OnDialogueEnded?.Invoke();
+	}
+
+	private void ProcessChoice(DialogueChoice choice)
+	{
+		bool isIncorrect = choice.Correctness == ChoiceCorrectness.Incorrect ||
+						   choice.Correctness == ChoiceCorrectness.VeryIncorrect;
+
+		if(isIncorrect)
+		{
+			if(_currentDialoguePhase == DialogueType.Conversation)
+			{
+				_incorrectConversationsCount++;
+			}
+			else if(_currentDialoguePhase == DialogueType.Question)
+			{
+				_incorrectQuestionsCount++;
+			}
+		}
+	}
+
+	private void UpdateDialoguePhase()
+	{
+		if(_currentDialoguePhase == DialogueType.Greetings)
+		{
+			if(_currentGreetingCount >= _nbGreetingsDialogue)
+				_currentDialoguePhase = DialogueType.Conversation;
+		}
+		else if(_currentDialoguePhase == DialogueType.Conversation)
+		{
+			if(_currentConversationCount >= _nbConversationDialogue)
+			{
+				if(_incorrectConversationsCount >= _nbConversationsIncorrectToFail)
+				{
+					_currentDialoguePhase = DialogueType.ConversationRejectionHarsh;
+				}
+				else
+				{
+					_currentDialoguePhase = DialogueType.Question;
+				}
+			}
+		}
+		else if (_currentDialoguePhase == DialogueType.Question)
+		{
+			if(_currentQuestionCount >= _nbQuestionsDialogue)
+			{
+				if(_incorrectQuestionsCount >= _nbQuestionsIncorrectToFail)
+				{
+					_currentDialoguePhase = DialogueType.RejectionSoft;
+				}
+				else
+				{
+					_currentDialoguePhase = DialogueType.Acceptance;
+				}
+			}
+		}
+		else if (_currentDialoguePhase != DialogueType.Acceptance) // Make sure we aren't stuck
+		{
+			_currentDialoguePhase = DialogueType.RejectionSoft;
+		}
+	}
+
+	bool IsDialoguePhaseFinal(DialogueType dialogueType)
+	{
+		return dialogueType == DialogueType.RejectionSoft ||
+			   dialogueType == DialogueType.RejectionHarsh ||
+			   dialogueType == DialogueType.Acceptance;
+	}
+
+	private void SetNextDialogueNode()
+	{
+		if(_currentNode)
+		{
+			// TODO if current node has a follow up node, use that instead, and early return
+
+			if(IsDialoguePhaseFinal(_currentNode.DialogueType))
+			{
+				EndDialogue();
+				return;
+			}
+		}
+
+		if(_currentNodeIndex + 1 < _currentNodesOfDialoguePhase.Count)
+		{
+			_currentNodeIndex++;
+			switch(_currentDialoguePhase)
+			{
+				case DialogueType.Greetings:
+					_currentGreetingCount++;
+					break;
+				case DialogueType.Conversation:
+					_currentConversationCount++;
+					break;
+				case DialogueType.Question:
+					_currentQuestionCount++;
+					break;
+			}
+
+			_currentNode = _currentNodesOfDialoguePhase[_currentNodeIndex];
+			OnNodeChangedCallback();
+			return;
+		}
+
+		UpdateDialoguePhase();
+
+		List<DialogueNode> possibleNextDialogueNodes;
+
+		JobType jobType = JobType.None;
+		if(_jobPostingData != null)
+			jobType = _jobPostingData.JobType;
+
+		switch(_currentDialoguePhase)
+		{
+			case DialogueType.Greetings:
+				_currentGreetingCount++;
+				possibleNextDialogueNodes = DialoguesGenerator.Instance.GetDialogues(DialogueType.Greetings);
+				break;
+			case DialogueType.Conversation:
+				_currentConversationCount++;
+				possibleNextDialogueNodes = DialoguesGenerator.Instance.GetDialogues(DialogueType.Conversation, jobType);
+				break;
+			case DialogueType.Question:
+				_currentQuestionCount++;
+				possibleNextDialogueNodes = DialoguesGenerator.Instance.GetDialogues(DialogueType.Question, jobType);
+				break;
+			default:
+				possibleNextDialogueNodes = DialoguesGenerator.Instance.GetDialogues(_currentDialoguePhase);
+				break;
+		}
+
+		if(possibleNextDialogueNodes.Count == 0)
+		{
+			Debug.LogWarning("No next nodes founds for dialogue phase: " + _currentDialoguePhase);
+			return;
+		}
+
+		int nbNodesInList = 1;
+		if(_currentDialoguePhase == DialogueType.Conversation)
+		{
+			nbNodesInList = _nbConversationDialogue;
+		}
+		else if(_currentDialoguePhase == DialogueType.Question)
+		{
+			nbNodesInList = _nbQuestionsDialogue;
+		}
+
+		// Get Unique random indexes
+		_currentNodesOfDialoguePhase = new List<DialogueNode>();
+		_currentNodeIndex = 0;
+
+		HashSet<int> randomIndexes = new HashSet<int>();
+		for(int i = 0; i < 100; ++i) // Avoid infinite loops
+		{
+			if(randomIndexes.Count >= nbNodesInList)
+			{
+				break;
+			}
+			int randomIndex = Random.Range(0, possibleNextDialogueNodes.Count);
+			if(!randomIndexes.Contains(randomIndex))
+			{
+				_currentNodesOfDialoguePhase.Add(possibleNextDialogueNodes[randomIndex]);
+			}
+			randomIndexes.Add(randomIndex);
+		}
+
+		_currentNode = _currentNodesOfDialoguePhase[0];
+		OnNodeChangedCallback();
 	}
 
 	private void OnNodeChangedCallback()
@@ -135,40 +270,40 @@ public class DialogueManager : MonoBehaviour
 		displayChoices.AddRange(_currentNode.FixedChoices);
 
 		// 2. Add pooled choices
-		if (_currentNode.ChoicePools.Count > 0)
-		{
-			List<DialogueChoice> combinedPool = new List<DialogueChoice>();
-			foreach (DialogueChoicePool pool in _currentNode.ChoicePools)
-			{
-				if (pool != null)
-				{
-					combinedPool.AddRange(pool.Choices);
-				}
-			}
+		//if (_currentNode.ChoicePools.Count > 0)
+		//{
+		//	List<DialogueChoice> combinedPool = new List<DialogueChoice>();
+		//	foreach (DialogueChoicePool pool in _currentNode.ChoicePools)
+		//	{
+		//		if (pool != null)
+		//		{
+		//			combinedPool.AddRange(pool.Choices);
+		//		}
+		//	}
 
-			if (_currentNode.RandomChoicesLimit > 0)
-			{
-				// Random subset
-				for (int i = 0; i < combinedPool.Count; i++)
-				{
-					DialogueChoice temp = combinedPool[i];
-					int randomIndex = UnityEngine.Random.Range(i, combinedPool.Count);
-					combinedPool[i] = combinedPool[randomIndex];
-					combinedPool[randomIndex] = temp;
-				}
+		//	if (_currentNode.RandomChoicesLimit > 0)
+		//	{
+		//		// Random subset
+		//		for (int i = 0; i < combinedPool.Count; i++)
+		//		{
+		//			DialogueChoice temp = combinedPool[i];
+		//			int randomIndex = UnityEngine.Random.Range(i, combinedPool.Count);
+		//			combinedPool[i] = combinedPool[randomIndex];
+		//			combinedPool[randomIndex] = temp;
+		//		}
 
-				int picks = Mathf.Min(_currentNode.RandomChoicesLimit, combinedPool.Count);
-				for (int i = 0; i < picks; i++)
-				{
-					displayChoices.Add(combinedPool[i]);
-				}
-			}
-			else
-			{
-				// Specific (All)
-				displayChoices.AddRange(combinedPool);
-			}
-		}
+		//		int picks = Mathf.Min(_currentNode.RandomChoicesLimit, combinedPool.Count);
+		//		for (int i = 0; i < picks; i++)
+		//		{
+		//			displayChoices.Add(combinedPool[i]);
+		//		}
+		//	}
+		//	else
+		//	{
+		//		// Specific (All)
+		//		displayChoices.AddRange(combinedPool);
+		//	}
+		//}
 
 		// 3. Instantiate buttons
 		foreach (DialogueChoice choice in displayChoices)

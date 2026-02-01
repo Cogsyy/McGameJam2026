@@ -10,14 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e7add7f3d05d7446800ca865300e9e9, type: 3}
-  m_Name: HorseRaceResponse
+  m_Name: NameConversation
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _characterName: 
-  _dialogueText: I hope your betting on a horse from Equinox Group
-  _fixedChoices: []
+  _dialogueText: What's your name?
+  _fixedChoices:
+  - ChoiceText: John
+    OptionalNextNode: {fileID: 0}
+    Correctness: 0
+    ChoiceTag: 
+  - ChoiceText: John Jobs
+    OptionalNextNode: {fileID: 0}
+    Correctness: 0
+    ChoiceTag: 
   _jobType: 0
-  _dialogueType: 0
-  _questionDifficulty: 0
+  _dialogueType: 2
+  _questionDifficulty: 1
   _specialTag: 
   _isDialogueFollowUp: 0
   _choicePools:

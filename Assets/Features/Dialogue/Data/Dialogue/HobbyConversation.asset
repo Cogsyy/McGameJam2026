@@ -10,14 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e7add7f3d05d7446800ca865300e9e9, type: 3}
-  m_Name: GamblingResponse2
+  m_Name: HobbyConversation
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _characterName: 
-  _dialogueText: You're gambling with your future
-  _fixedChoices: []
+  _dialogueText: So, what are your hobbies buddy?
+  _fixedChoices:
+  - ChoiceText: Gambling
+    OptionalNextNode: {fileID: 0}
+    Correctness: 2
   _jobType: 0
-  _dialogueType: 0
-  _questionDifficulty: 0
+  _dialogueType: 2
+  _questionDifficulty: 1
   _specialTag: 
   _isDialogueFollowUp: 0
   _choicePools:
