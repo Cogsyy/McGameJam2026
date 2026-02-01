@@ -55,7 +55,7 @@ public class GameStarter : MonoBehaviour
 	{
 		foreach(var skill in ConversationSkills)
 		{
-			Player.Instance.UnlockSkill(skill.ID);
+			Player.Instance.UnlockSkill(skill);
 		}
 	}
 

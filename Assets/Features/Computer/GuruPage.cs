@@ -71,7 +71,7 @@ public class GuruPage : MonoBehaviour, IShop
 				AudioManager.Instance.PlaySFX(_purchaseSFX);
 			}
 			Debug.Log($"Purchased skill {skill.SkillName} for ${skill.Price}");
-			Player.Instance.UnlockSkill(skill.ID);
+			Player.Instance.UnlockSkill(skill);
             _skillsDisplay.DisplaySkills();
 			
 			// Remove from currently displayed

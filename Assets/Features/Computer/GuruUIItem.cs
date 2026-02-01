@@ -30,22 +30,6 @@ public class GuruUIItem : MonoBehaviour
 			if (_owner.TryPurchaseSkill(_currentSkill))
 			{
 				gameObject.SetActive(false);
-                if (_currentSkill.SkillName == "Programming")
-                {
-                    Player.Instance.programmingSkill++;
-                }
-                else if (_currentSkill.SkillName == "Design")
-                {
-                    Player.Instance.designSkill++;
-                }
-                else if (_currentSkill.SkillName == "Art")
-                {
-                    Player.Instance.artSkill++;
-                }
-                else if (_currentSkill.SkillName == "Music")
-                {
-                    Player.Instance.musicSkill++;
-                }
 			}
 		}
 	}

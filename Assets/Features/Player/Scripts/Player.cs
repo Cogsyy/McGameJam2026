@@ -74,12 +74,29 @@ public class Player : MonoBehaviour
 		return false;
 	}
 
-	public void UnlockSkill(string skillId)
+	public void UnlockSkill(ConversationSkill skill)
 	{
-		if (!_unlockedSkills.Contains(skillId))
+		if (!_unlockedSkills.Contains(skill.ID))
 		{
-			_unlockedSkills.Add(skillId);
-			Debug.Log($"Unlocked skill: {skillId}");
+			_unlockedSkills.Add(skill.ID);
+			Debug.Log($"Unlocked skill: {skill}");
+
+			if (skill.SkillName.ToLower() == "programming")
+			{
+				Player.Instance.programmingSkill++;
+			}
+			else if (skill.SkillName.ToLower() == "game design")
+			{
+				Player.Instance.designSkill++;
+			}
+			else if (skill.SkillName.ToLower() == "art")
+			{
+				Player.Instance.artSkill++;
+			}
+			else if (skill.SkillName.ToLower() == "music")
+			{
+				Player.Instance.musicSkill++;
+			}
 		}
 	}
 }
