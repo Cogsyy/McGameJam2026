@@ -36,11 +36,6 @@ public class GuruPage : MonoBehaviour, IShop
 		// Shuffle and pick top slots count
 		availableSkills = availableSkills.OrderBy(x => Random.value).ToList();
 		
-		if (_shuffleSFX != null && AudioManager.Instance != null)
-		{
-			AudioManager.Instance.PlaySFX(_shuffleSFX);
-		}
-		
 		_currentlyDisplayedSkills.Clear();
 		int countToDisplay = Mathf.Min(availableSkills.Count, _skillSlots.Count);
 		
