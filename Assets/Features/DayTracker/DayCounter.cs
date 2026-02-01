@@ -8,6 +8,9 @@ public class DayCounter : MonoBehaviour
     //public GameController gameController;
     public int numberJobPostings = 3;
 
+    [SerializeField] private ShopPage _shop;
+    [SerializeField] private GuruPage _guru;
+
 
     void Start()
     {
@@ -23,6 +26,9 @@ public class DayCounter : MonoBehaviour
 		{
 			jobPostingManager.InitializeJobPostings(numberJobPostings);
 		}
+
+        _shop.Restock();
+        _guru.Restock();
 	}
 
     public void UpdateDayDisplay(int currentDay)
