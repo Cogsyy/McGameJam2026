@@ -308,17 +308,16 @@ MonoBehaviour:
     bodyPart: legs
     hairModel: 
     texture: {fileID: 2800000, guid: a91167bb6d5a12b4b93e6e8fe739d915, type: 3}
-
- _conversationSkills:
+  _conversationSkills:
   - ID: 0
     Price: 20
-    SkillName: Design
+    SkillName: Art
   - ID: 1
     Price: 20
-    SkillName: Programming
+    SkillName: Music
   - ID: 2
     Price: 20
-    SkillName: Art
+    SkillName: Design
   - ID: 3
-    Price: 20
-    SkillName: Music
+    Price: 25
+    SkillName: Programming
