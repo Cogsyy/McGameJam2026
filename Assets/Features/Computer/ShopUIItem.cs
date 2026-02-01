@@ -9,15 +9,15 @@ public class ShopUIItem : MonoBehaviour
 	[SerializeField] private TMP_Text _priceText;
 	[SerializeField] private Button _buyButton;
 
-	private ShopItem _currentItem;
+	private ClothingItem _currentItem;
 	private ShopPage _owner;
 
-	public void Setup(ShopPage owner, ShopItem item)
+	public void Setup(ShopPage owner, ClothingItem item)
 	{
 		_owner = owner;
 		_currentItem = item;
 
-		if (_iconImage != null) _iconImage.sprite = item.Icon;
+		if (_iconImage != null) _iconImage.sprite = item.itemIcon;
 		if (_priceText != null) _priceText.text = "$" + item.Price.ToString();
 
 		_buyButton.onClick.RemoveAllListeners();

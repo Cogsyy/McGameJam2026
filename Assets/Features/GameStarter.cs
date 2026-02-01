@@ -7,8 +7,18 @@ public class GameStarter : MonoBehaviour
 	[Header("Audio")]
 	[SerializeField] private AudioClip _mainTheme;
 
-	public ClothingItem[] _clothingItems;
+	[SerializeField] private ClothingItem[] _clothingItems;
 
+	private static GameStarter _instance;
+
+	private void Awake()
+	{
+		_instance = this;
+	}
+
+	public static GameStarter Instance => _instance;
+
+	public ClothingItem[] ClothingItems => _clothingItems;
 
 	private void Start()
 	{
