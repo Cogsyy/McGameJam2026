@@ -471,7 +471,7 @@ MonoBehaviour:
   _canvasFader: {fileID: 1497927621181449306}
   _playerCanvas: {fileID: 0}
   _titleMusic: {fileID: 8300000, guid: 569f6ac5d9551e448abed8fda7f82f78, type: 3}
-  _gameMusic: {fileID: 8300000, guid: 32aeaba18bddc7d459354919b19ec784, type: 3}
+  _gameMusic: {fileID: 8300000, guid: 252610e14e967432aa17b04575e793fb, type: 3}
 --- !u!225 &1850595332719751222
 CanvasGroup:
   m_ObjectHideFlags: 0
