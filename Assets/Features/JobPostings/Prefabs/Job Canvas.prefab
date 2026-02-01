@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3235545295245837312
 RectTransform:
   m_ObjectHideFlags: 0
@@ -123,7 +123,6 @@ MonoBehaviour:
   - {fileID: 5988148058122746015}
   - {fileID: 1193246721550539495}
   jobPostingData:
-  - {fileID: 11400000, guid: 991e98c64cf0c6b4bb675ab23f221f76, type: 2}
   - {fileID: 11400000, guid: 396fb932c74e36743b90eeae3b454a94, type: 2}
   - {fileID: 11400000, guid: b91d4ad365f9b4b4e83deb8c25aaa327, type: 2}
   - {fileID: 11400000, guid: c27f70d1c0b036545ba342ca0c2617a6, type: 2}

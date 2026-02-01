@@ -1597,6 +1597,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 7031176411416455364}
+    - target: {fileID: 4992135821812575709, guid: 93ef521c0b380464897b9d74bf543311, type: 3}
+      propertyPath: jobPostingData.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4992135821812575709, guid: 93ef521c0b380464897b9d74bf543311, type: 3}
+      propertyPath: 'jobPostingData.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 396fb932c74e36743b90eeae3b454a94, type: 2}
+    - target: {fileID: 4992135821812575709, guid: 93ef521c0b380464897b9d74bf543311, type: 3}
+      propertyPath: 'jobPostingData.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b91d4ad365f9b4b4e83deb8c25aaa327, type: 2}
+    - target: {fileID: 4992135821812575709, guid: 93ef521c0b380464897b9d74bf543311, type: 3}
+      propertyPath: 'jobPostingData.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c27f70d1c0b036545ba342ca0c2617a6, type: 2}
+    - target: {fileID: 4992135821812575709, guid: 93ef521c0b380464897b9d74bf543311, type: 3}
+      propertyPath: 'jobPostingData.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: de3da65d5a58ac349874551c45ceaa46, type: 2}
     - target: {fileID: 9025597597931585221, guid: 93ef521c0b380464897b9d74bf543311, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
