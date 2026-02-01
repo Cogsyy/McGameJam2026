@@ -10,30 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e7add7f3d05d7446800ca865300e9e9, type: 3}
-  m_Name: ProgQuestion2 1
+  m_Name: RejectionHarsh 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _characterName: 
-  _dialogueText: How big is a typical CPU Cache?
+  _dialogueText: I'm sorry but I don't think you would fit in with our teams.
   _fixedChoices:
-  - ChoiceText: 128 KB
+  - ChoiceText: :(
     OptionalNextNode: {fileID: 0}
-    Correctness: 1
+    Correctness: 0
     ChoiceTag: 
-  - ChoiceText: 128 B
-    OptionalNextNode: {fileID: 0}
-    Correctness: 2
-    ChoiceTag: 
-  - ChoiceText: 128 MB
-    OptionalNextNode: {fileID: 0}
-    Correctness: 2
-    ChoiceTag: 
-  - ChoiceText: 1 MB
-    OptionalNextNode: {fileID: 0}
-    Correctness: 2
-    ChoiceTag: 
-  _jobType: 2
-  _dialogueType: 5
-  _questionDifficulty: 3
+  _jobType: 0
+  _dialogueType: 3
+  _questionDifficulty: 0
   _specialTag: 
   _isDialogueFollowUp: 0
   _choicePools:
