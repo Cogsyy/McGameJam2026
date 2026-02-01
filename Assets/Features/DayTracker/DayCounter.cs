@@ -19,7 +19,7 @@ public class DayCounter : MonoBehaviour
         UpdateDayDisplay(dayCount++);
 
 		JobPostingManager jobPostingManager = null;
-		if(jobPostingManager = FindAnyObjectByType<JobPostingManager>())
+		if(jobPostingManager = FindAnyObjectByType<JobPostingManager>(FindObjectsInactive.Include))
 		{
 			jobPostingManager.InitializeJobPostings(numberJobPostings);
 		}
