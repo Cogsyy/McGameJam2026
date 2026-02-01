@@ -1,3 +1,4 @@
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
@@ -35,8 +36,12 @@ public class PauseMenu : MonoBehaviour
     {
         paused = !paused;
         _pauseMenu.enabled = paused;
+        if(paused)
+            Time.timeScale = 0;
+        else
+            Time.timeScale = 1;
 
-        if (_fpCamera != null)
+		if(_fpCamera != null)
         {
             _fpCamera.SetMouseLookEnabled(!paused);
         }
