@@ -8,7 +8,8 @@ public class FirstPersonCamera : MonoBehaviour
 	[SerializeField] private float _minVerticalAngle = -90f;
 	[SerializeField] private float _maxVerticalAngle = 90f;
 
-	private float _verticalRotation = 0f;
+	private float _rotationX = 0f;
+	private float _rotationY = 0f;
 	private bool _isMouseLookEnabled = true;
 	private Coroutine _movementCoroutine;
 
@@ -21,6 +22,7 @@ public class FirstPersonCamera : MonoBehaviour
 	{
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
+		SyncRotationState(transform.rotation);
 	}
 
 	private void Update()
@@ -30,15 +32,11 @@ public class FirstPersonCamera : MonoBehaviour
 			float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Time.deltaTime;
 			float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Time.deltaTime;
 
-			// Horizontal rotation (Yaw)
-			transform.Rotate(Vector3.up * mouseX);
+			_rotationY += mouseX;
+			_rotationX -= mouseY;
+			//_rotationX = Mathf.Clamp(_rotationX, _minVerticalAngle, _maxVerticalAngle);
 
-			// Vertical rotation (Pitch)
-			_verticalRotation -= mouseY;
-			_verticalRotation = Mathf.Clamp(_verticalRotation, _minVerticalAngle, _maxVerticalAngle);
-
-			// Applying pitch to the camera object
-			transform.localRotation = Quaternion.Euler(_verticalRotation, transform.localEulerAngles.y, 0f);
+			transform.localRotation = Quaternion.Euler(_rotationX, _rotationY, 0f);
 		}
 		else if (_isFocused && Input.GetKeyDown(KeyCode.Escape))
 		{
@@ -131,12 +129,13 @@ public class FirstPersonCamera : MonoBehaviour
 
 	private void SyncRotationState(Quaternion rotation)
 	{
-		// Reset internal vertical rotation to match the new orientation
-		_verticalRotation = rotation.eulerAngles.x;
-		if (_verticalRotation > 180f)
-		{
-			_verticalRotation -= 360f;
-		}
+		Vector3 euler = rotation.eulerAngles;
+		
+		_rotationX = euler.x;
+		if (_rotationX > 180f) _rotationX -= 360f;
+		
+		_rotationY = euler.y;
+		if (_rotationY > 180f) _rotationY -= 360f;
 	}
 
 	public void SetMouseLookEnabled(bool enabled)

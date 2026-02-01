@@ -208,6 +208,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &987947195 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5964487231504781783, guid: b78842957bfa8a942b1e3751bf723496, type: 3}
+  m_PrefabInstance: {fileID: 8177961979539469844}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8c3b611baa40ca40b0aa37e6bb27255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResumeIntroAnimation
 --- !u!1001 &1743890261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -297,9 +308,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2197724529795298650, guid: 434c17200f0b47d4c86c2110822851cc, type: 3}
+      propertyPath: _fpCamera
+      value: 
+      objectReference: {fileID: 2140400612}
+    - target: {fileID: 2197724529795298650, guid: 434c17200f0b47d4c86c2110822851cc, type: 3}
       propertyPath: _playerCanvas
       value: 
       objectReference: {fileID: 699309735}
+    - target: {fileID: 2197724529795298650, guid: 434c17200f0b47d4c86c2110822851cc, type: 3}
+      propertyPath: _resumeAnimation
+      value: 
+      objectReference: {fileID: 987947195}
     - target: {fileID: 5158229018856971727, guid: 434c17200f0b47d4c86c2110822851cc, type: 3}
       propertyPath: m_Name
       value: IntroCanvas
@@ -309,6 +328,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 434c17200f0b47d4c86c2110822851cc, type: 3}
+--- !u!114 &2140400612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6820096842354413069, guid: 0c45e9a12d8e5be47ae1abdd5e58a999, type: 3}
+  m_PrefabInstance: {fileID: 282065463978746133}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbbc3a50597453d4f9e8f5f45cff90f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FirstPersonCamera
 --- !u!1001 &282065463978746133
 PrefabInstance:
   m_ObjectHideFlags: 0
