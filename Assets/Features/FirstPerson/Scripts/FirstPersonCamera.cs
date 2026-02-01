@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class FirstPersonCamera : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class FirstPersonCamera : MonoBehaviour
 
 	private float _verticalRotation = 0f;
 	private bool _isMouseLookEnabled = true;
+	private Coroutine _movementCoroutine;
+
+	private Vector3 _previousPosition;
+	private Quaternion _previousRotation;
+	private bool _isFocused = false;
+	private float _currentFocusDuration = 0.5f;
 
 	private void Start()
 	{
@@ -33,21 +40,103 @@ public class FirstPersonCamera : MonoBehaviour
 			// Applying pitch to the camera object
 			transform.localRotation = Quaternion.Euler(_verticalRotation, transform.localEulerAngles.y, 0f);
 		}
+		else if (_isFocused && Input.GetKeyDown(KeyCode.Escape))
+		{
+			ReturnToPreviousPosition();
+		}
 	}
 
 	public void SetPosition(Vector3 position, Quaternion rotation)
 	{
+		StopActiveTransition();
+
 		transform.position = position;
 		transform.rotation = rotation;
 
+		SyncRotationState(rotation);
+
+		Debug.Log("Set position: " + position + " and rotation: " + rotation);
+	}
+
+	public void MoveToPosition(Vector3 targetPosition, Quaternion targetRotation, float duration)
+	{
+		StopActiveTransition();
+
+		if (!_isFocused)
+		{
+			_previousPosition = transform.position;
+			_previousRotation = transform.rotation;
+			_isFocused = true;
+			_isMouseLookEnabled = false;
+		}
+
+		_currentFocusDuration = duration;
+		_movementCoroutine = StartCoroutine(MoveToPositionCoroutine(targetPosition, targetRotation, duration));
+	}
+
+	public void ReturnToPreviousPosition()
+	{
+		if (!_isFocused)
+		{
+			return;
+		}
+
+		StopActiveTransition();
+		_movementCoroutine = StartCoroutine(ReturnToPreviousCoroutine(_currentFocusDuration));
+	}
+
+	private IEnumerator ReturnToPreviousCoroutine(float duration)
+	{
+		yield return StartCoroutine(MoveToPositionCoroutine(_previousPosition, _previousRotation, duration));
+		
+		_isFocused = false;
+		SetMouseLookEnabled(true);
+	}
+
+	private IEnumerator MoveToPositionCoroutine(Vector3 targetPosition, Quaternion targetRotation, float duration)
+	{
+		Vector3 startPosition = transform.position;
+		Quaternion startRotation = transform.rotation;
+		float elapsed = 0f;
+
+		while (elapsed < duration)
+		{
+			elapsed += Time.deltaTime;
+			float t = elapsed / duration;
+			
+			// Use smooth step for better feel
+			t = t * t * (3f - 2f * t);
+
+			transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+			transform.rotation = Quaternion.Slerp(startRotation, targetRotation, t);
+
+			yield return null;
+		}
+
+		transform.position = targetPosition;
+		transform.rotation = targetRotation;
+		
+		SyncRotationState(targetRotation);
+		_movementCoroutine = null;
+	}
+
+	private void StopActiveTransition()
+	{
+		if (_movementCoroutine != null)
+		{
+			StopCoroutine(_movementCoroutine);
+			_movementCoroutine = null;
+		}
+	}
+
+	private void SyncRotationState(Quaternion rotation)
+	{
 		// Reset internal vertical rotation to match the new orientation
 		_verticalRotation = rotation.eulerAngles.x;
 		if (_verticalRotation > 180f)
 		{
 			_verticalRotation -= 360f;
 		}
-
-		Debug.Log("Set position: " + position + " and rotation: " + rotation);
 	}
 
 	public void SetMouseLookEnabled(bool enabled)
