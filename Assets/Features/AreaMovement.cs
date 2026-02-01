@@ -11,6 +11,7 @@ public class AreaMovement : MonoBehaviour
 
 	[SerializeField] private CanvasFader fadeCanvas;
 
+	[SerializeField] private GameObject jobBoard;
 
 	public void GoToInterview()
     {
@@ -19,8 +20,8 @@ public class AreaMovement : MonoBehaviour
 			if(!interviewRoomTransform)
 				return;
 			PlaceCameraAtTransform(interviewRoomTransform);
+			DeactivateAllSceneStuff();
 			fadeCanvas.FadeToAlpha(0);
-
 			FindAnyObjectByType<DialogueManager>()?.StartDialogue();
 		});
 	}
@@ -29,11 +30,13 @@ public class AreaMovement : MonoBehaviour
 
     public void GoHome()
     {
+		jobBoard.SetActive(false);
 		fadeCanvas.FadeToAlpha(1, () =>
 		{
 			if(!homeRoomTransform)
 				return;
 			PlaceCameraAtTransform(homeRoomTransform);
+			DeactivateAllSceneStuff();
 			fadeCanvas.FadeToAlpha(0);
 			FindAnyObjectByType<FirstPersonCamera>().SetMouseLookEnabled(true);
 		});
@@ -46,7 +49,9 @@ public class AreaMovement : MonoBehaviour
 			if(!jobBoardTransform)
 				return;
 			PlaceCameraAtTransform(jobBoardTransform);
+			DeactivateAllSceneStuff();
 			fadeCanvas.FadeToAlpha(0);
+			jobBoard.SetActive(true);
 		});
 	}
 
@@ -70,5 +75,10 @@ public class AreaMovement : MonoBehaviour
     {
 		mainCamera.transform.position = transform.position;
 		mainCamera.transform.rotation = transform.rotation;
+	}
+
+	void DeactivateAllSceneStuff()
+	{
+		jobBoard.SetActive(false);
 	}
 }
