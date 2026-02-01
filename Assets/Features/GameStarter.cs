@@ -7,6 +7,9 @@ public class GameStarter : MonoBehaviour
 	[Header("Audio")]
 	[SerializeField] private AudioClip _mainTheme;
 
+	public ClothingItem[] _clothingItems;
+
+
 	private void Start()
 	{
 		if (_dialogueManager != null)
