@@ -24,6 +24,14 @@ public class ShopPage : MonoBehaviour, IShop
 		Restock();
 	}
 
+	private void OnEnable()
+	{
+		if (_shuffleSFX != null && AudioManager.Instance != null)
+		{
+			AudioManager.Instance.PlaySFX(_shuffleSFX);
+		}
+	}
+
 	public void Restock()
 	{
 		// Filter out items already purchased
@@ -33,11 +41,6 @@ public class ShopPage : MonoBehaviour, IShop
 
 		// Shuffle and pick top 3
 		availableItems = availableItems.OrderBy(x => Random.value).ToList();
-		
-		if (_shuffleSFX != null && AudioManager.Instance != null)
-		{
-			AudioManager.Instance.PlaySFX(_shuffleSFX);
-		}
 		
 		_currentlyDisplayedItems.Clear();
 		int countToDisplay = Mathf.Min(availableItems.Count, _itemSlots.Count);
@@ -60,11 +63,6 @@ public class ShopPage : MonoBehaviour, IShop
 			{
 				_itemSlots[i].gameObject.SetActive(true);
 				_itemSlots[i].Setup(this, _currentlyDisplayedItems[i]);
-
-				if (_dealSFX != null && AudioManager.Instance != null)
-				{
-					AudioManager.Instance.PlaySFX(_dealSFX);
-				}
 			}
 		}
 	}

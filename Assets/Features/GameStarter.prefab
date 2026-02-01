@@ -339,6 +339,9 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   fadeCanvas: {fileID: 0}
   jobBoard: {fileID: 0}
+  _interviewMusic: {fileID: 8300000, guid: a749868964e5847fa8c049e43be83eac, type: 3}
+  _homeMusic: {fileID: 8300000, guid: 9085d1b6500bc47ed97b775b806679be, type: 3}
+  _doorSfx: {fileID: 8300000, guid: 87f20d33bf830f242982e1e640f796ca, type: 3}
 --- !u!114 &1763033834159911893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,3 +356,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DayCounter
   dayCount: 0
   dayLabel: {fileID: 0}
+  numberJobPostings: 3
+  _shop: {fileID: 0}
+  _guru: {fileID: 0}
