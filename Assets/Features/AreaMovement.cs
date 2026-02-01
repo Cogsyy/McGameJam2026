@@ -20,6 +20,8 @@ public class AreaMovement : MonoBehaviour
 				return;
 			PlaceCameraAtTransform(interviewRoomTransform);
 			fadeCanvas.FadeToAlpha(0);
+
+			FindAnyObjectByType<DialogueManager>()?.StartDialogue();
 		});
 	}
 
