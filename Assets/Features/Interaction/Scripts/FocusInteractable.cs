@@ -6,6 +6,7 @@ public class FocusInteractable : SimpleInteractable
 	[SerializeField] private Transform _viewPoint;
 	[SerializeField] private float _heightOffset = 1.6f;
 	[SerializeField] private bool _lookAtTarget = true;
+	[SerializeField] private float _focusDuration = 0.5f;
 
 	protected override void Reset()
 	{
@@ -41,18 +42,20 @@ public class FocusInteractable : SimpleInteractable
 		if (cam != null)
 		{
 			Vector3 targetPosition = _viewPoint.position + Vector3.up * _heightOffset;
-			
+			Quaternion targetRotation;
+
 			// Calculate rotation to look at the object
 			if (_lookAtTarget)
 			{
 				Vector3 directionToTarget = (transform.position - targetPosition).normalized;
-				Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
-				cam.SetPosition(targetPosition, targetRotation);
+				targetRotation = Quaternion.LookRotation(directionToTarget);
 			}
 			else
 			{
-				cam.SetPosition(targetPosition, _viewPoint.rotation);
+				targetRotation = _viewPoint.rotation;
 			}
+
+			cam.MoveToPosition(targetPosition, targetRotation, _focusDuration);
 		}
 	}
 }
