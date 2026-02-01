@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 2518371159018839659}
   - component: {fileID: 6188464253540799625}
   - component: {fileID: 1475646499706340485}
-  - component: {fileID: 4888559570094588369}
+  - component: {fileID: 2862427425370658757}
   - component: {fileID: 5889086681185742481}
   m_Layer: 3
   m_Name: Placeholder_DeskCV
@@ -218,7 +218,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4888559570094588369
+--- !u!114 &2862427425370658757
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,9 +227,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5381922499127036844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43260a661dab71c4dbf99c816a73035d, type: 3}
+  m_Script: {fileID: 11500000, guid: b9a06f3927aa31e44ad356918ce442c7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FocusInteractable
+  m_EditorClassIdentifier: Assembly-CSharp::ResumeInteractable
   _message: Interacted!
   _highlightMaterial: {fileID: 2100000, guid: 0e7f9d91f7d5ad34ba933ce5e7f8a26b, type: 2}
   cursorVisibleOnInteract: 0
@@ -238,6 +238,8 @@ MonoBehaviour:
   _heightOffset: 1
   _lookAtTarget: 1
   _focusDuration: 0.5
+  _resumeAnimation: {fileID: 0}
+  _cvCanvas: {fileID: 0}
 --- !u!114 &5889086681185742481
 MonoBehaviour:
   m_ObjectHideFlags: 0

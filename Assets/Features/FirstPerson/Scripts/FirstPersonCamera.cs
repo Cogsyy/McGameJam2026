@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections;
 
 public class FirstPersonCamera : MonoBehaviour
@@ -62,7 +63,7 @@ public class FirstPersonCamera : MonoBehaviour
 		SyncRotationState();
 	}
 
-	public void MoveToPosition(Vector3 targetPosition, Quaternion targetRotation, float duration)
+	public void MoveToPosition(Vector3 targetPosition, Quaternion targetRotation, float duration, Action onComplete = null)
 	{
 		StopActiveTransition();
 
@@ -75,7 +76,7 @@ public class FirstPersonCamera : MonoBehaviour
 		}
 
 		_currentFocusDuration = duration;
-		_movementCoroutine = StartCoroutine(MoveToPositionCoroutine(targetPosition, targetRotation, duration));
+		_movementCoroutine = StartCoroutine(MoveToPositionCoroutine(targetPosition, targetRotation, duration, onComplete));
 	}
 
 	private void ReturnToPreviousPosition()
@@ -97,7 +98,7 @@ public class FirstPersonCamera : MonoBehaviour
 		SetMouseLookEnabled(true);
 	}
 
-	private IEnumerator MoveToPositionCoroutine(Vector3 targetPosition, Quaternion targetRotation, float duration)
+	private IEnumerator MoveToPositionCoroutine(Vector3 targetPosition, Quaternion targetRotation, float duration, Action onComplete = null)
 	{
 		Vector3 startPosition = transform.position;
 		Quaternion startRotation = transform.rotation;
@@ -121,6 +122,7 @@ public class FirstPersonCamera : MonoBehaviour
 		
 		SyncRotationState();
 		_movementCoroutine = null;
+		onComplete?.Invoke();
 	}
 
 	private void StopActiveTransition()

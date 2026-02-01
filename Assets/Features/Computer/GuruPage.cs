@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
-public class GuruPage : MonoBehaviour
+public class GuruPage : MonoBehaviour, IShop
 {
 	[Header("Skills")]
 	[SerializeField] private List<GuruUIItem> _skillSlots = new List<GuruUIItem>();

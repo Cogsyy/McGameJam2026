@@ -2,7 +2,12 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
-public class ShopPage : MonoBehaviour
+public interface IShop
+{
+	void Restock();
+}
+
+public class ShopPage : MonoBehaviour, IShop
 {
 	[Header("Items")]
 	[SerializeField] private List<ShopUIItem> _itemSlots = new List<ShopUIItem>();
@@ -73,6 +78,8 @@ public class ShopPage : MonoBehaviour
 			
 			// Remove from currently displayed and update UI
 			_currentlyDisplayedItems.Remove(item);
+
+			item.isUnlocked = true;
             return true;
 		}
 		else

@@ -8,6 +8,8 @@ public class FocusInteractable : SimpleInteractable
 	[SerializeField] private bool _lookAtTarget = true;
 	[SerializeField] private float _focusDuration = 0.5f;
 
+	protected Coroutine focusCoroutine;
+
 	protected override void Reset()
 	{
 		base.Reset();
@@ -55,7 +57,12 @@ public class FocusInteractable : SimpleInteractable
 				targetRotation = _viewPoint.rotation;
 			}
 
-			cam.MoveToPosition(targetPosition, targetRotation, _focusDuration);
+			cam.MoveToPosition(targetPosition, targetRotation, _focusDuration, OnFocusComplete);
 		}
+	}
+
+	protected virtual void OnFocusComplete()
+	{
+
 	}
 }
