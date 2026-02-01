@@ -1,9 +1,13 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Wardrobe : MonoBehaviour
 {
-    public GameObject itemSlotPrefab;
+    public ItemSlot itemSlotPrefab;
     public Transform gridContainer;
+    public DressingUp previewGuy;
+    public GameStarter gameController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,10 +40,11 @@ public class Wardrobe : MonoBehaviour
         //}
         //replace this wo
         int shittyCounter = 0;
-        while(shittyCounter < 10){
-            GameObject slot = Instantiate(itemSlotPrefab, gridContainer);
-            //ItemSlot slotScript = slot.GetComponent<ItemSlot>();
-            //slotScript.Setup(item);
+        foreach(ClothingItem clothing in gameController.ClothingItems){
+            ItemSlot slot = Instantiate(itemSlotPrefab, gridContainer);
+            slot.Setup(clothing);
+            slot.slotButton.onClick.AddListener(slot.OnSlotClicked);
+            slot.previewGuy = this.previewGuy;
             shittyCounter++;
         }
     }
