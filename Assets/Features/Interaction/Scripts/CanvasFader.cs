@@ -45,6 +45,8 @@ public class CanvasFader : MonoBehaviour
 		}
 
 		_canvasGroup.alpha = targetAlpha;
+		_canvasGroup.interactable = false;
+		_canvasGroup.blocksRaycasts = false;
 		_fadeCoroutine = null;
 		onComplete?.Invoke();
 	}

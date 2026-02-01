@@ -260,6 +260,15 @@ public class DialogueManager : MonoBehaviour
 		OnNodeChangedCallback();
 	}
 
+	private bool IsDialogueNodeSkillUnlocked(DialogueNode node)
+	{
+		Player player =  FindAnyObjectByType<Player>();
+		if(!player)
+			return false;
+
+		return player.UnlockedSkills.Contains(node.GetDialogueID());
+	}
+
 	private void OnNodeChangedCallback()
 	{
 		ClearButtons();
@@ -269,49 +278,15 @@ public class DialogueManager : MonoBehaviour
 		// 1. Add fixed choices
 		displayChoices.AddRange(_currentNode.FixedChoices);
 
-		// 2. Add pooled choices
-		//if (_currentNode.ChoicePools.Count > 0)
-		//{
-		//	List<DialogueChoice> combinedPool = new List<DialogueChoice>();
-		//	foreach (DialogueChoicePool pool in _currentNode.ChoicePools)
-		//	{
-		//		if (pool != null)
-		//		{
-		//			combinedPool.AddRange(pool.Choices);
-		//		}
-		//	}
-
-		//	if (_currentNode.RandomChoicesLimit > 0)
-		//	{
-		//		// Random subset
-		//		for (int i = 0; i < combinedPool.Count; i++)
-		//		{
-		//			DialogueChoice temp = combinedPool[i];
-		//			int randomIndex = UnityEngine.Random.Range(i, combinedPool.Count);
-		//			combinedPool[i] = combinedPool[randomIndex];
-		//			combinedPool[randomIndex] = temp;
-		//		}
-
-		//		int picks = Mathf.Min(_currentNode.RandomChoicesLimit, combinedPool.Count);
-		//		for (int i = 0; i < picks; i++)
-		//		{
-		//			displayChoices.Add(combinedPool[i]);
-		//		}
-		//	}
-		//	else
-		//	{
-		//		// Specific (All)
-		//		displayChoices.AddRange(combinedPool);
-		//	}
-		//}
+		bool showCorrectAnswers = IsDialogueNodeSkillUnlocked(_currentNode);
 
 		// 3. Instantiate buttons
 		foreach (DialogueChoice choice in displayChoices)
 		{
 			DialogueResponseButton button = Instantiate(_responseButton, _responsesParent);
-			button.gameObject.SetActive(true);
 			_responseButtons.Add(button);
-			button.Setup(this, choice);
+			button.Setup(this, choice, showCorrectAnswers);
+			button.gameObject.SetActive(true);
 		}
 
 		_mainDialogue.text = _currentNode.DialogueText;
