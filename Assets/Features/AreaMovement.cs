@@ -5,6 +5,7 @@ public class AreaMovement : MonoBehaviour
     [SerializeField] private Transform interviewRoomTransform;
     [SerializeField] private Transform homeRoomTransform;
     [SerializeField] private Transform jobBoardTransform;
+	[SerializeField] private Transform wardrobeTransform;
 
     [SerializeField] private Camera mainCamera;
 
@@ -12,6 +13,7 @@ public class AreaMovement : MonoBehaviour
 	[SerializeField] private CanvasFader fadeCanvas;
 
 	[SerializeField] private GameObject jobBoard;
+	[SerializeField] private GameObject wardrobe;
 
 	[SerializeField] private AudioClip _interviewMusic;
 	[SerializeField] private AudioClip _homeMusic;
@@ -64,6 +66,19 @@ public class AreaMovement : MonoBehaviour
 		});
 	}
 
+	public void GoToWardrobe()
+	{
+		fadeCanvas.FadeToAlpha(1, () =>
+		{
+			if(!wardrobeTransform)
+				return;
+			PlaceCameraAtTransform(wardrobeTransform);
+			DeactivateAllSceneStuff();
+			fadeCanvas.FadeToAlpha(0);
+			wardrobe.SetActive(true);
+		});
+	}
+
 	private void Update()
 	{
 		if(Input.GetKeyDown(KeyCode.F9))
@@ -89,5 +104,6 @@ public class AreaMovement : MonoBehaviour
 	void DeactivateAllSceneStuff()
 	{
 		jobBoard.SetActive(false);
+		wardrobe.SetActive(false);
 	}
 }
