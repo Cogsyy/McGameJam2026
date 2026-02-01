@@ -47,8 +47,8 @@ MonoBehaviour:
   _dialogueManager: {fileID: 0}
   _mainTheme: {fileID: 0}
   _clothingItems:
-  - ID: 
-    Price: 0
+  - ID: 0
+    Price: 20
     itemName: Dirty Green Hoodie
     itemIcon: {fileID: 257902526345160822, guid: 2c3dee703f40ca444884bbc11a4bcdd4, type: 3}
     isUnlocked: 0
@@ -56,8 +56,8 @@ MonoBehaviour:
     bodyPart: body
     hairModel: 
     texture: {fileID: 2800000, guid: b331352b0887a364897e9354f5ae11d8, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 1
+    Price: 20
     itemName: Dirty Brown Hoodie
     itemIcon: {fileID: -1693557772885657729, guid: cd409787aaaddec49a498bcf550224dc, type: 3}
     isUnlocked: 0
@@ -65,8 +65,8 @@ MonoBehaviour:
     bodyPart: body
     hairModel: 
     texture: {fileID: 2800000, guid: 0e30ec207ab8cbb4cadb5779ab9f00b2, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 2
+    Price: 20
     itemName: Dirty Red Hoodie
     itemIcon: {fileID: -7432361424510267669, guid: 7fcd5d63db0a78544a4ae4acadf5ffd7, type: 3}
     isUnlocked: 0
@@ -74,8 +74,8 @@ MonoBehaviour:
     bodyPart: body
     hairModel: 
     texture: {fileID: 2800000, guid: 3db3d8a0e8979e741b2e1d8308507589, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 3
+    Price: 20
     itemName: Black Suit
     itemIcon: {fileID: 2983396129237504386, guid: 73090356d45f9ca46ad947ad89d684eb, type: 3}
     isUnlocked: 0
@@ -83,8 +83,8 @@ MonoBehaviour:
     bodyPart: body
     hairModel: 
     texture: {fileID: 2800000, guid: 4f3fb5f6cee222e4386d0a39c1a4e146, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 4
+    Price: 20
     itemName: Blue Suit
     itemIcon: {fileID: -8218584130191911205, guid: 7bee2f19bfcc19e45aff46be05a568fc, type: 3}
     isUnlocked: 0
@@ -92,8 +92,8 @@ MonoBehaviour:
     bodyPart: body
     hairModel: 
     texture: {fileID: 2800000, guid: 6c23825c0a6e5c149b369bd8586a7b88, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 5
+    Price: 20
     itemName: Purple Suit
     itemIcon: {fileID: 5595620550901723933, guid: 1a12846d35e05e84c8afdef817e31ab7, type: 3}
     isUnlocked: 0
@@ -101,8 +101,8 @@ MonoBehaviour:
     bodyPart: body
     hairModel: 
     texture: {fileID: 2800000, guid: 1bc32b57bc677f6428639ad72d0dab92, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 6
+    Price: 20
     itemName: Blue Hoodie
     itemIcon: {fileID: 4859785960619931837, guid: cdf6ae718344e0840aec94ac822fc531, type: 3}
     isUnlocked: 0
@@ -110,8 +110,8 @@ MonoBehaviour:
     bodyPart: body
     hairModel: 
     texture: {fileID: 2800000, guid: 858d7e971b498e54aa234cbdbf9c7075, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 7
+    Price: 20
     itemName: Green Hoodie
     itemIcon: {fileID: -3449108294933322566, guid: 5a252c894a3a83545882224d68ea7c38, type: 3}
     isUnlocked: 0
@@ -119,8 +119,8 @@ MonoBehaviour:
     bodyPart: body
     hairModel: 
     texture: {fileID: 2800000, guid: 069dcd253e6426841bc84602e2299160, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 8
+    Price: 20
     itemName: Red Hoodie
     itemIcon: {fileID: 3895477791213742693, guid: 84d1a273bfe11b8449df3a14f2df2c10, type: 3}
     isUnlocked: 0
@@ -128,8 +128,8 @@ MonoBehaviour:
     bodyPart: body
     hairModel: 
     texture: {fileID: 2800000, guid: 39a38cf0f323d9846b13e087c1b46af8, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 9
+    Price: 20
     itemName: Purple Hair
     itemIcon: {fileID: -8635654303145081748, guid: 62a5f280c455a834f94b45a2f5553794, type: 3}
     isUnlocked: 0
@@ -137,8 +137,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: short
     texture: {fileID: 2800000, guid: 9e7f1a1ac4e822141a7db3c715377fb5, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 10
+    Price: 20
     itemName: Brown Hair
     itemIcon: {fileID: 4658704368423427462, guid: 647ec77c40021d34280dc82f55021850, type: 3}
     isUnlocked: 0
@@ -146,8 +146,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: short
     texture: {fileID: 2800000, guid: 55691b6f4112db843a4700ae5dc3537c, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 11
+    Price: 20
     itemName: Blonde Hair
     itemIcon: {fileID: 4596585809968764165, guid: b7d80990854f9bb4686a6b472f575603, type: 3}
     isUnlocked: 0
@@ -155,8 +155,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: short
     texture: {fileID: 2800000, guid: 96a47f2e40801d6489f3d6a9b2b00311, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 12
+    Price: 20
     itemName: Blue Hair
     itemIcon: {fileID: -4202800209803111058, guid: 68618403a1a62ff40a5a8d89149c55a6, type: 3}
     isUnlocked: 0
@@ -164,8 +164,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: short
     texture: {fileID: 2800000, guid: 3d9855cca63d17641bdea01e42ccab02, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 13
+    Price: 20
     itemName: Red Hair
     itemIcon: {fileID: -1077674788265456020, guid: c7023ce3c890f0940963170c1561e2ed, type: 3}
     isUnlocked: 0
@@ -173,8 +173,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: short
     texture: {fileID: 2800000, guid: dd833423db676c6449c7ea71080e5c88, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 14
+    Price: 20
     itemName: Bald
     itemIcon: {fileID: 7110211559683091508, guid: 066bcd20f2dc59944aeec9f3296fe4e1, type: 3}
     isUnlocked: 0
@@ -182,8 +182,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: bald
     texture: {fileID: 2800000, guid: 9d61b71db3c863a43a6b5246570aae1a, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 15
+    Price: 20
     itemName: Blonde Fancy Hair
     itemIcon: {fileID: -7871579372067654894, guid: fa833e6fd82dbcd46987ef2b42490f80, type: 3}
     isUnlocked: 0
@@ -191,8 +191,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: fancy
     texture: {fileID: 2800000, guid: c2e2063324d204545a57d8a806a8709e, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 16
+    Price: 20
     itemName: Brown Fancy Hair
     itemIcon: {fileID: 3855525765869890273, guid: c06d1c2127cbf0b4ebdca2b0f71260ea, type: 3}
     isUnlocked: 0
@@ -200,8 +200,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: fancy
     texture: {fileID: 2800000, guid: 864ecb4e5c169be47bed6a9ed92a0e3b, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 17
+    Price: 20
     itemName: Green Fancy Hair
     itemIcon: {fileID: 7458803020431025491, guid: 060d0f418a519f34d8c7dc2aef69179c, type: 3}
     isUnlocked: 0
@@ -209,8 +209,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: fancy
     texture: {fileID: 2800000, guid: a7329b62c20f3d241a447739d9b0cd1c, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 18
+    Price: 20
     itemName: Pink Fancy Hair
     itemIcon: {fileID: -8140422671985824130, guid: 59f448283b5d9564cabf616ae7d587c8, type: 3}
     isUnlocked: 0
@@ -218,8 +218,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: fancy
     texture: {fileID: 2800000, guid: aeefacc10679b8a40a07f685557a37af, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 19
+    Price: 20
     itemName: White Fancy Hair
     itemIcon: {fileID: 6361501661167777618, guid: 274769031d3739a41ae0fcd470ec7303, type: 3}
     isUnlocked: 0
@@ -227,8 +227,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: fancy
     texture: {fileID: 2800000, guid: 06737fb6093d1d140b4dfabcc5eb9e36, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 20
+    Price: 20
     itemName: Blonde Bun
     itemIcon: {fileID: -6136529058472994107, guid: 586b5dd1ce37f854e889c6c43b693c60, type: 3}
     isUnlocked: 0
@@ -236,8 +236,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: bun
     texture: {fileID: 2800000, guid: 1263cca002202dd4b8931f794cf09a74, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 21
+    Price: 20
     itemName: Blue Bun
     itemIcon: {fileID: 668751927787128235, guid: 5426061da3c4ea44694ec9504bb067d9, type: 3}
     isUnlocked: 0
@@ -245,8 +245,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: bun
     texture: {fileID: 2800000, guid: dad532207d31788409df504f4f7fba01, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 22
+    Price: 20
     itemName: Brown Bun
     itemIcon: {fileID: 5961951794405996826, guid: 52893f2053e1db64da70a9609d07d8e8, type: 3}
     isUnlocked: 0
@@ -254,8 +254,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: bun
     texture: {fileID: 2800000, guid: 6524c9a1a8437bf40bea748bce3c5d20, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 23
+    Price: 20
     itemName: Pink Bun
     itemIcon: {fileID: -4590823670269908639, guid: dc9aa736eb41f1d4d8ed2a7a5ffa4f53, type: 3}
     isUnlocked: 0
@@ -263,8 +263,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: bun
     texture: {fileID: 2800000, guid: bdc59ef4af161ff4c9a87eb85d7b06d8, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 24
+    Price: 20
     itemName: Orange Bun
     itemIcon: {fileID: -2937512449904573928, guid: d9b27bbf43f09e346a83d818e4581112, type: 3}
     isUnlocked: 0
@@ -272,8 +272,8 @@ MonoBehaviour:
     bodyPart: head
     hairModel: bun
     texture: {fileID: 2800000, guid: 24daa514091fca2448249d9c240f9521, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 25
+    Price: 20
     itemName: Pink Pants
     itemIcon: {fileID: -2715218977527064078, guid: cc4aca77f38423b4ab623d2f53ac9f6b, type: 3}
     isUnlocked: 0
@@ -281,8 +281,8 @@ MonoBehaviour:
     bodyPart: legs
     hairModel: 
     texture: {fileID: 2800000, guid: ee65735302616c24cafce9d4874e7cd0, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 26
+    Price: 20
     itemName: Dirty Grey Pants
     itemIcon: {fileID: -6241743843722419158, guid: 3d0e789c006dbd94fa4deb43ca36d94c, type: 3}
     isUnlocked: 0
@@ -290,8 +290,8 @@ MonoBehaviour:
     bodyPart: legs
     hairModel: 
     texture: {fileID: 2800000, guid: 4bec33eb2ff88104eac15c518131183f, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 27
+    Price: 20
     itemName: Blue Pants
     itemIcon: {fileID: -7113414753803910335, guid: 1bbda2da3cfd89a4daec07e971f65625, type: 3}
     isUnlocked: 0
@@ -299,8 +299,8 @@ MonoBehaviour:
     bodyPart: legs
     hairModel: 
     texture: {fileID: 2800000, guid: 2c13a451d8ee9964fb43faf6d5b36cee, type: 3}
-  - ID: 
-    Price: 0
+  - ID: 28
+    Price: 20
     itemName: Ripped Jeans
     itemIcon: {fileID: 6350418642236211528, guid: 2f89ee28a7adc3943a63bb26ea080909, type: 3}
     isUnlocked: 0
