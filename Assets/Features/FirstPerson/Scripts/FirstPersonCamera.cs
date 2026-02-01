@@ -29,22 +29,24 @@ public class FirstPersonCamera : MonoBehaviour
 	{
 		if (_isMouseLookEnabled)
 		{
-			if (_skipFrame)
+			if (!_skipFrame)
+			{
+				float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Time.deltaTime;
+				float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Time.deltaTime;
+
+				_rotationY += mouseX;
+				_rotationX -= mouseY;
+				_rotationX = Mathf.Clamp(_rotationX, _minVerticalAngle, _maxVerticalAngle);
+
+				transform.localRotation = Quaternion.Euler(_rotationX, _rotationY, 0f);
+			}
+			else
 			{
 				_skipFrame = false;
-				return;
 			}
-
-			float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Time.deltaTime;
-			float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Time.deltaTime;
-
-			_rotationY += mouseX;
-			_rotationX -= mouseY;
-			_rotationX = Mathf.Clamp(_rotationX, _minVerticalAngle, _maxVerticalAngle);
-
-			transform.localRotation = Quaternion.Euler(_rotationX, _rotationY, 0f);
 		}
-		else if (_isFocused && Input.GetKeyDown(KeyCode.Escape))
+
+		if (_isFocused && Input.GetKeyDown(KeyCode.Escape))
 		{
 			ReturnToPreviousPosition();
 		}
@@ -58,8 +60,6 @@ public class FirstPersonCamera : MonoBehaviour
 		transform.rotation = rotation;
 
 		SyncRotationState();
-
-		Debug.Log("Set position: " + position + " and rotation: " + rotation);
 	}
 
 	public void MoveToPosition(Vector3 targetPosition, Quaternion targetRotation, float duration)
@@ -78,7 +78,7 @@ public class FirstPersonCamera : MonoBehaviour
 		_movementCoroutine = StartCoroutine(MoveToPositionCoroutine(targetPosition, targetRotation, duration));
 	}
 
-	public void ReturnToPreviousPosition()
+	private void ReturnToPreviousPosition()
 	{
 		if (!_isFocused)
 		{
@@ -116,7 +116,6 @@ public class FirstPersonCamera : MonoBehaviour
 
 			yield return null;
 		}
-
 		transform.position = targetPosition;
 		transform.rotation = targetRotation;
 		
