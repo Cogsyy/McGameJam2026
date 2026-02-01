@@ -24,8 +24,8 @@ public class DressingUp : MonoBehaviour
 
     public void DressBlackSuit()
     {
-		ClothingItem suit = FindAnyObjectByType<GameStarter>()._clothingItems.First(item => item.itemName.ToLower() == "black suit");
-        ClothingItem pants = FindAnyObjectByType<GameStarter>()._clothingItems.First(item => item.itemName.ToLower() == "black pants");
+		ClothingItem suit = FindAnyObjectByType<GameStarter>().ClothingItems.First(item => item.itemName.ToLower() == "black suit");
+        ClothingItem pants = FindAnyObjectByType<GameStarter>().ClothingItems.First(item => item.itemName.ToLower() == "black pants");
 
 		ChangeClothing(suit);
         ChangeClothing(pants);
