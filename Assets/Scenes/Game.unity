@@ -3419,6 +3419,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
+      propertyPath: _mainTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: efe41c4fa86917f488f4fd5e02b073be, type: 3}
+    - target: {fileID: 8223452454296971967, guid: 29c4ba88ff4757642baec1024343ad24, type: 3}
       propertyPath: _dialogueManager
       value: 
       objectReference: {fileID: 107786201}

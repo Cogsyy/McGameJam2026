@@ -40,17 +40,19 @@ public class AreaMovement : MonoBehaviour
     public void GoHome()
     {
 		jobBoard.SetActive(false);
+		
 		fadeCanvas.FadeToAlpha(1, () =>
 		{
 			if(!homeRoomTransform)
 				return;
 			PlaceCameraAtTransform(homeRoomTransform);
 			DeactivateAllSceneStuff();
+			
 			fadeCanvas.FadeToAlpha(0);
 			FindAnyObjectByType<FirstPersonCamera>().SetMouseLookEnabled(true);
 		});
-
 		AudioManager.Instance.PlayMusic(_homeMusic);
+
 	}
 
     public void GoToJobBoard()

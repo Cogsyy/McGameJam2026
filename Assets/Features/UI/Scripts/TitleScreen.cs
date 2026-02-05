@@ -51,16 +51,18 @@ public class TitleScreen : MonoBehaviour
 
 		if (_canvasFader != null)
 		{
+			if (AudioManager.Instance != null && _gameMusic != null)
+			{
+				AudioManager.Instance.PlayMusic(_gameMusic, true);
+			}
+
 			_canvasFader.FadeToAlpha(0, OnFadeOutComplete);
+
 		}
 	}
 
     private void OnFadeOutComplete()
     {
-        if (AudioManager.Instance != null && _gameMusic != null)
-		{
-			AudioManager.Instance.PlayMusic(_gameMusic, true);
-		}
 
 		if (_resumeAnimation != null)
 		{

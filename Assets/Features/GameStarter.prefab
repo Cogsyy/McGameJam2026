@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameStarter
   _dialogueManager: {fileID: 0}
-  _mainTheme: {fileID: 0}
+  _mainTheme: {fileID: 8300000, guid: efe41c4fa86917f488f4fd5e02b073be, type: 3}
   _clothingItems:
   - ID: 0
     Price: 20
@@ -336,9 +336,11 @@ MonoBehaviour:
   interviewRoomTransform: {fileID: 0}
   homeRoomTransform: {fileID: 0}
   jobBoardTransform: {fileID: 0}
+  wardrobeTransform: {fileID: 0}
   mainCamera: {fileID: 0}
   fadeCanvas: {fileID: 0}
   jobBoard: {fileID: 0}
+  wardrobe: {fileID: 0}
   _interviewMusic: {fileID: 8300000, guid: a749868964e5847fa8c049e43be83eac, type: 3}
   _homeMusic: {fileID: 8300000, guid: 9085d1b6500bc47ed97b775b806679be, type: 3}
   _doorSfx: {fileID: 8300000, guid: 87f20d33bf830f242982e1e640f796ca, type: 3}
